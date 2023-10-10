@@ -2859,6 +2859,7 @@ select{
 		margin: 0 auto;
 		height: 45px;
 		width: inherit;
+		font-size: 16px;
 	}
 
 	.Zebra_DatePicker_Icon_Wrapper {
