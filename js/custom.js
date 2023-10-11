@@ -98,40 +98,74 @@ const locations = [
   'Ioannina, National, Airport, King, Pyrros, IOA',
   'Astypalaia, Island, National, Airport, JTY',
   'Sitia, Public, Airport, Vitsentzos, Kornaros, JSH',
+  'Kozani, State, Airport, Filippos, KZI',
+  'Ikaria, National, Airport, JIK',
+  'Nea, Anchialos, National, Airport, VOL',
+  'Skiathos, International, Airport, Alexandros, Papadiamantis, JSI',
+  'Naxos, Airport, Apollon, JNX',
+  'Corfu, International, Airport, Ioannis, Kapodistrias, CFO',
+  'Paros, Airport, PAS',
+  'Chios, Airport, Omiros, JKH',
+  'Kastellorizo, Airport, KZS',
+  'Skyros, Island, National, Airport, SKU',
+  'Kavala, Airport, Alexander, the, Great, KVA',
+  'Lemnos, International, Airport, Hephaestus, LXS',
+  'Alexandros, Onasis, Kythira, Airport, KIT',
+  'Alexandroupolis, Airport, Democritus, AXD',
+  'Kasos, Island, Public, Airport, KSJ',
+  'Kalymnos, Island, National, Airport, JKL',
+  'Eleftherios, Venizelos, International, Airport, LGAV',
+  'Heraklion, International, Nikos, Kazantzakis, Airport, LGIR',
+  'Thessaloniki, Macedonia, International, Airport, LGTS',
+
+
+
 
 
   // Add more locations as needed
 ];
 
+
 // Function to update the location list based on user input
 function updateLocationList(inputText) {
-  // Clear previous list items
-  locationList.innerHTML = '';
-
-  // Filter and display matching locations
-  const matchingLocations = locations.filter(location => {
-    return location.toLowerCase().includes(inputText.toLowerCase());
+	// Clear previous list items
+	locationList.innerHTML = '';
+  
+	if (inputText.trim() === '') {
+	  // If the input field is empty, hide the list
+	  locationList.style.display = 'none';
+	} else {
+	  // Filter and display matching locations
+	  const matchingLocations = locations.filter(location => {
+		return location.toLowerCase().includes(inputText.toLowerCase());
+	  });
+  
+	  if (matchingLocations.length > 0) {
+		matchingLocations.forEach(location => {
+		  const listItem = document.createElement('li');
+		  listItem.textContent = location;
+		  listItem.addEventListener('click', () => {
+			locationInput.value = location;
+			locationList.innerHTML = '';
+			locationList.style.display = 'none'; // Hide the list after selection
+		  });
+		  locationList.appendChild(listItem);
+		});
+  
+		// Show the list
+		locationList.style.display = 'block';
+	  } else {
+		// If no matches, hide the list
+		locationList.style.display = 'none';
+	  }
+	}
+  }
+  
+  // Event listener for input changes to show location suggestions
+  locationInput.addEventListener('input', () => {
+	const inputText = locationInput.value;
+	updateLocationList(inputText);
   });
-
-  matchingLocations.forEach(location => {
-    const listItem = document.createElement('li');
-    listItem.textContent = location;
-    listItem.addEventListener('click', () => {
-      locationInput.value = location;
-      locationList.innerHTML = '';
-    });
-    locationList.appendChild(listItem);
-  });
-}
-
-// Event listener for input changes to show location suggestions
-locationInput.addEventListener('input', () => {
-  const inputText = locationInput.value;
-  updateLocationList(inputText);
-});
-
-
-
 
 
 
