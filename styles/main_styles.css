@@ -1573,7 +1573,7 @@ select{
 	width: 100%;
 	height: 100%;
 	z-index: 2;
-	background: #27124b61;
+	background: #7a633f3b;
 	border-radius: 30px;
 }
 .intro_item_background
@@ -1977,7 +1977,7 @@ select{
 	bottom: 0;
 	width: 100%;
 	height: 44.1%;
-	background: linear-gradient(to right, #321a62b0, #8a878780);
+	background-image: linear-gradient(160deg, #d8b7694d 40%, #80454538 100%);
 	border-radius: 30px;
 }
 .test_content
