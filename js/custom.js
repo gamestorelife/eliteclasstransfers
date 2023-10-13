@@ -48,124 +48,354 @@ window.onload = function() {
  //location auto complete Function
 
 
- const locationInput = document.getElementById('location-input');
-const locationList = document.getElementById('location-list');
-
-// Simulated location data (you can replace this with a real data source)
-const locations = [
-  'Athens, Greece',
-  'Crete, Greece',
-  'Santorini, Greece',
-  'Thessaloniki, Greece',
-  'Mykonos, Greece',
-  'Corfu, Greece',
-  'Heraklion, Greece',
-  'Peloponnese, Greece',
-  'Rhodes, Greece',
-  'Nafplion, Greece',
-  'Patras, Greece',
-  'Zakynthos, Greece',
-  'Euboea, Greece',
-  'Volos, Greece',
-  'Naxos, Greece',
-  'Central Greece, Greece',
-  'Chania, Greece',
-  'Halkidiki, Greece',
-  'Ioannina, Greece',
-  'Piraeus, Greece',
-  'Chios, Greece',
-  'Lefkada, Greece',
-  'Kalamata, Greece',
-  'Olympia, Greece',
-  'Athens, International, Airport, Eleftherios, Venizelos, ATH',
-  'Aktion, International, Airport, PVK',
-  'Chania, International, Airport, Ioannis, Daskalogiannis, CHQ',
-  'Zakynthos, International, Airport, Dionysios, Solomos, ZTH',
-  'Kalamata, International, Airport, Captain, Vasilis, Konstantakopoulos, KLX',
-  'Heraklion, Airport, N, Kazantzakis, HER',
-  'Aéroport, international, de, l, île, de, Kos, KGS',
-  'Rhodes, International, Airport, Diagoras, RHO',
-  'Mitilini, Airport, Odysseas, Elytis, MJT',
-  'Mykonos, International, Airport, JMK',
-  'Santorini, Airport, JTR',
-  'Milos, Airport, MLO',
-  'Kefalonia, International, Airport, Anna, Pollatou, EFL',
-  'Samos, Airport, SMI',
-  'Araxos, Airport, GPA',
-  'Thessaloniki, International, Airport, Macedonia, SKG',
-  'Kastoria, Airport, Aristotle, KSO',
-  'Karpathos, Airport, AOK',
-  'Ioannina, National, Airport, King, Pyrros, IOA',
-  'Astypalaia, Island, National, Airport, JTY',
-  'Sitia, Public, Airport, Vitsentzos, Kornaros, JSH',
-  'Kozani, State, Airport, Filippos, KZI',
-  'Ikaria, National, Airport, JIK',
-  'Nea, Anchialos, National, Airport, VOL',
-  'Skiathos, International, Airport, Alexandros, Papadiamantis, JSI',
-  'Naxos, Airport, Apollon, JNX',
-  'Corfu, International, Airport, Ioannis, Kapodistrias, CFO',
-  'Paros, Airport, PAS',
-  'Chios, Airport, Omiros, JKH',
-  'Kastellorizo, Airport, KZS',
-  'Skyros, Island, National, Airport, SKU',
-  'Kavala, Airport, Alexander, the, Great, KVA',
-  'Lemnos, International, Airport, Hephaestus, LXS',
-  'Alexandros, Onasis, Kythira, Airport, KIT',
-  'Alexandroupolis, Airport, Democritus, AXD',
-  'Kasos, Island, Public, Airport, KSJ',
-  'Kalymnos, Island, National, Airport, JKL',
-  'Eleftherios, Venizelos, International, Airport, LGAV',
-  'Heraklion, International, Nikos, Kazantzakis, Airport, LGIR',
-  'Thessaloniki, Macedonia, International, Airport, LGTS',
+ 
 
 
 
 
 
-  // Add more locations as needed
-];
-
-
-// Function to update the location list based on user input
-function updateLocationList(inputText) {
-	// Clear previous list items
-	locationList.innerHTML = '';
+ function setupLocationInput(inputId, listId, locations) {
+	const locationInput = document.getElementById(inputId);
+	const locationList = document.getElementById(listId);
   
-	if (inputText.trim() === '') {
-	  // If the input field is empty, hide the list
-	  locationList.style.display = 'none';
-	} else {
-	  // Filter and display matching locations
-	  const matchingLocations = locations.filter(location => {
-		return location.toLowerCase().includes(inputText.toLowerCase());
-	  });
+	locationInput.addEventListener('input', () => {
+	  const inputText = locationInput.value;
+	  updateLocationList(inputText);
+	});
   
-	  if (matchingLocations.length > 0) {
-		matchingLocations.forEach(location => {
-		  const listItem = document.createElement('li');
-		  listItem.textContent = location;
-		  listItem.addEventListener('click', () => {
-			locationInput.value = location;
-			locationList.innerHTML = '';
-			locationList.style.display = 'none'; // Hide the list after selection
-		  });
-		  locationList.appendChild(listItem);
+	function updateLocationList(inputText) {
+	  locationList.innerHTML = '';
+  
+	  if (inputText.trim() === '') {
+		locationList.style.display = 'none';
+	  } else {
+		const matchingLocations = locations.filter(location => {
+		  return location.toLowerCase().includes(inputText.toLowerCase());
 		});
   
-		// Show the list
-		locationList.style.display = 'block';
-	  } else {
-		// If no matches, hide the list
-		locationList.style.display = 'none';
+		if (matchingLocations.length > 0) {
+		  matchingLocations.forEach(location => {
+			const listItem = document.createElement('li');
+			listItem.textContent = location;
+			listItem.addEventListener('click', () => {
+			  locationInput.value = location;
+			  locationList.innerHTML = '';
+			  locationList.style.display = 'none';
+			});
+			locationList.appendChild(listItem);
+		  });
+  
+		  locationList.style.display = 'block';
+		} else {
+		  locationList.style.display = 'none';
+		}
 	  }
 	}
   }
   
-  // Event listener for input changes to show location suggestions
-  locationInput.addEventListener('input', () => {
-	const inputText = locationInput.value;
-	updateLocationList(inputText);
-  });
+
+ // Simulated location data (you can replace this with a real data source)
+const locations1 = [
+	'Athens, Greece',
+	'Crete, Greece',
+	'Santorini, Greece',
+	'Thessaloniki, Greece',
+	'Mykonos, Greece',
+	'Corfu, Greece',
+	'Heraklion, Greece',
+	'Peloponnese, Greece',
+	'Rhodes, Greece',
+	'Nafplion, Greece',
+	'Patras, Greece',
+	'Zakynthos, Greece',
+	'Euboea, Greece',
+	'Volos, Greece',
+	'Naxos, Greece',
+	'Central Greece, Greece',
+	'Chania, Greece',
+	'Halkidiki, Greece',
+	'Ioannina, Greece',
+	'Piraeus, Greece',
+	'Chios, Greece',
+	'Lefkada, Greece',
+	'Kalamata, Greece',
+	'Olympia, Greece',
+	'Athens, International, Airport, Eleftherios, Venizelos, ATH',
+	'Aktion, International, Airport, PVK',
+	'Chania, International, Airport, Ioannis, Daskalogiannis, CHQ',
+	'Zakynthos, International, Airport, Dionysios, Solomos, ZTH',
+	'Kalamata, International, Airport, Captain, Vasilis, Konstantakopoulos, KLX',
+	'Heraklion, Airport, N, Kazantzakis, HER',
+	'Aéroport, international, de, l, île, de, Kos, KGS',
+	'Rhodes, International, Airport, Diagoras, RHO',
+	'Mitilini, Airport, Odysseas, Elytis, MJT',
+	'Mykonos, International, Airport, JMK',
+	'Santorini, Airport, JTR',
+	'Milos, Airport, MLO',
+	'Kefalonia, International, Airport, Anna, Pollatou, EFL',
+	'Samos, Airport, SMI',
+	'Araxos, Airport, GPA',
+	'Thessaloniki, International, Airport, Macedonia, SKG',
+	'Kastoria, Airport, Aristotle, KSO',
+	'Karpathos, Airport, AOK',
+	'Ioannina, National, Airport, King, Pyrros, IOA',
+	'Astypalaia, Island, National, Airport, JTY',
+	'Sitia, Public, Airport, Vitsentzos, Kornaros, JSH',
+	'Kozani, State, Airport, Filippos, KZI',
+	'Ikaria, National, Airport, JIK',
+	'Nea, Anchialos, National, Airport, VOL',
+	'Skiathos, International, Airport, Alexandros, Papadiamantis, JSI',
+	'Naxos, Airport, Apollon, JNX',
+	'Corfu, International, Airport, Ioannis, Kapodistrias, CFO',
+	'Paros, Airport, PAS',
+	'Chios, Airport, Omiros, JKH',
+	'Kastellorizo, Airport, KZS',
+	'Skyros, Island, National, Airport, SKU',
+	'Kavala, Airport, Alexander, the, Great, KVA',
+	'Lemnos, International, Airport, Hephaestus, LXS',
+	'Alexandros, Onasis, Kythira, Airport, KIT',
+	'Alexandroupolis, Airport, Democritus, AXD',
+	'Kasos, Island, Public, Airport, KSJ',
+	'Kalymnos, Island, National, Airport, JKL',
+	'Eleftherios, Venizelos, International, Airport, LGAV',
+	'Heraklion, International, Nikos, Kazantzakis, Airport, LGIR',
+	'Thessaloniki, Macedonia, International, Airport, LGTS',
+  
+  
+  
+  
+  
+	// Add more locations as needed
+  ];
+  
+  const locations2 = [
+	  'Athens, Greece',
+	  'Crete, Greece',
+	  'Santorini, Greece',
+	  'Thessaloniki, Greece',
+	  'Mykonos, Greece',
+	  'Corfu, Greece',
+	  'Heraklion, Greece',
+	  'Peloponnese, Greece',
+	  'Rhodes, Greece',
+	  'Nafplion, Greece',
+	  'Patras, Greece',
+	  'Zakynthos, Greece',
+	  'Euboea, Greece',
+	  'Volos, Greece',
+	  'Naxos, Greece',
+	  'Central Greece, Greece',
+	  'Chania, Greece',
+	  'Halkidiki, Greece',
+	  'Ioannina, Greece',
+	  'Piraeus, Greece',
+	  'Chios, Greece',
+	  'Lefkada, Greece',
+	  'Kalamata, Greece',
+	  'Olympia, Greece',
+	  'Athens, International, Airport, Eleftherios, Venizelos, ATH',
+	  'Aktion, International, Airport, PVK',
+	  'Chania, International, Airport, Ioannis, Daskalogiannis, CHQ',
+	  'Zakynthos, International, Airport, Dionysios, Solomos, ZTH',
+	  'Kalamata, International, Airport, Captain, Vasilis, Konstantakopoulos, KLX',
+	  'Heraklion, Airport, N, Kazantzakis, HER',
+	  'Aéroport, international, de, l, île, de, Kos, KGS',
+	  'Rhodes, International, Airport, Diagoras, RHO',
+	  'Mitilini, Airport, Odysseas, Elytis, MJT',
+	  'Mykonos, International, Airport, JMK',
+	  'Santorini, Airport, JTR',
+	  'Milos, Airport, MLO',
+	  'Kefalonia, International, Airport, Anna, Pollatou, EFL',
+	  'Samos, Airport, SMI',
+	  'Araxos, Airport, GPA',
+	  'Thessaloniki, International, Airport, Macedonia, SKG',
+	  'Kastoria, Airport, Aristotle, KSO',
+	  'Karpathos, Airport, AOK',
+	  'Ioannina, National, Airport, King, Pyrros, IOA',
+	  'Astypalaia, Island, National, Airport, JTY',
+	  'Sitia, Public, Airport, Vitsentzos, Kornaros, JSH',
+	  'Kozani, State, Airport, Filippos, KZI',
+	  'Ikaria, National, Airport, JIK',
+	  'Nea, Anchialos, National, Airport, VOL',
+	  'Skiathos, International, Airport, Alexandros, Papadiamantis, JSI',
+	  'Naxos, Airport, Apollon, JNX',
+	  'Corfu, International, Airport, Ioannis, Kapodistrias, CFO',
+	  'Paros, Airport, PAS',
+	  'Chios, Airport, Omiros, JKH',
+	  'Kastellorizo, Airport, KZS',
+	  'Skyros, Island, National, Airport, SKU',
+	  'Kavala, Airport, Alexander, the, Great, KVA',
+	  'Lemnos, International, Airport, Hephaestus, LXS',
+	  'Alexandros, Onasis, Kythira, Airport, KIT',
+	  'Alexandroupolis, Airport, Democritus, AXD',
+	  'Kasos, Island, Public, Airport, KSJ',
+	  'Kalymnos, Island, National, Airport, JKL',
+	  'Eleftherios, Venizelos, International, Airport, LGAV',
+	  'Heraklion, International, Nikos, Kazantzakis, Airport, LGIR',
+	  'Thessaloniki, Macedonia, International, Airport, LGTS',
+	
+	
+	
+	
+	
+	  // Add more locations as needed
+	];
+	
+	const locations3 = [
+	  'Athens, Greece',
+	  'Crete, Greece',
+	  'Santorini, Greece',
+	  'Thessaloniki, Greece',
+	  'Mykonos, Greece',
+	  'Corfu, Greece',
+	  'Heraklion, Greece',
+	  'Peloponnese, Greece',
+	  'Rhodes, Greece',
+	  'Nafplion, Greece',
+	  'Patras, Greece',
+	  'Zakynthos, Greece',
+	  'Euboea, Greece',
+	  'Volos, Greece',
+	  'Naxos, Greece',
+	  'Central Greece, Greece',
+	  'Chania, Greece',
+	  'Halkidiki, Greece',
+	  'Ioannina, Greece',
+	  'Piraeus, Greece',
+	  'Chios, Greece',
+	  'Lefkada, Greece',
+	  'Kalamata, Greece',
+	  'Olympia, Greece',
+	  'Athens, International, Airport, Eleftherios, Venizelos, ATH',
+	  'Aktion, International, Airport, PVK',
+	  'Chania, International, Airport, Ioannis, Daskalogiannis, CHQ',
+	  'Zakynthos, International, Airport, Dionysios, Solomos, ZTH',
+	  'Kalamata, International, Airport, Captain, Vasilis, Konstantakopoulos, KLX',
+	  'Heraklion, Airport, N, Kazantzakis, HER',
+	  'Aéroport, international, de, l, île, de, Kos, KGS',
+	  'Rhodes, International, Airport, Diagoras, RHO',
+	  'Mitilini, Airport, Odysseas, Elytis, MJT',
+	  'Mykonos, International, Airport, JMK',
+	  'Santorini, Airport, JTR',
+	  'Milos, Airport, MLO',
+	  'Kefalonia, International, Airport, Anna, Pollatou, EFL',
+	  'Samos, Airport, SMI',
+	  'Araxos, Airport, GPA',
+	  'Thessaloniki, International, Airport, Macedonia, SKG',
+	  'Kastoria, Airport, Aristotle, KSO',
+	  'Karpathos, Airport, AOK',
+	  'Ioannina, National, Airport, King, Pyrros, IOA',
+	  'Astypalaia, Island, National, Airport, JTY',
+	  'Sitia, Public, Airport, Vitsentzos, Kornaros, JSH',
+	  'Kozani, State, Airport, Filippos, KZI',
+	  'Ikaria, National, Airport, JIK',
+	  'Nea, Anchialos, National, Airport, VOL',
+	  'Skiathos, International, Airport, Alexandros, Papadiamantis, JSI',
+	  'Naxos, Airport, Apollon, JNX',
+	  'Corfu, International, Airport, Ioannis, Kapodistrias, CFO',
+	  'Paros, Airport, PAS',
+	  'Chios, Airport, Omiros, JKH',
+	  'Kastellorizo, Airport, KZS',
+	  'Skyros, Island, National, Airport, SKU',
+	  'Kavala, Airport, Alexander, the, Great, KVA',
+	  'Lemnos, International, Airport, Hephaestus, LXS',
+	  'Alexandros, Onasis, Kythira, Airport, KIT',
+	  'Alexandroupolis, Airport, Democritus, AXD',
+	  'Kasos, Island, Public, Airport, KSJ',
+	  'Kalymnos, Island, National, Airport, JKL',
+	  'Eleftherios, Venizelos, International, Airport, LGAV',
+	  'Heraklion, International, Nikos, Kazantzakis, Airport, LGIR',
+	  'Thessaloniki, Macedonia, International, Airport, LGTS',
+	
+	
+	
+	
+	
+	  // Add more locations as needed
+	];
+  
+  
+	const locations4 = [
+	  'Athens, Greece',
+	  'Crete, Greece',
+	  'Santorini, Greece',
+	  'Thessaloniki, Greece',
+	  'Mykonos, Greece',
+	  'Corfu, Greece',
+	  'Heraklion, Greece',
+	  'Peloponnese, Greece',
+	  'Rhodes, Greece',
+	  'Nafplion, Greece',
+	  'Patras, Greece',
+	  'Zakynthos, Greece',
+	  'Euboea, Greece',
+	  'Volos, Greece',
+	  'Naxos, Greece',
+	  'Central Greece, Greece',
+	  'Chania, Greece',
+	  'Halkidiki, Greece',
+	  'Ioannina, Greece',
+	  'Piraeus, Greece',
+	  'Chios, Greece',
+	  'Lefkada, Greece',
+	  'Kalamata, Greece',
+	  'Olympia, Greece',
+	  'Athens, International, Airport, Eleftherios, Venizelos, ATH',
+	  'Aktion, International, Airport, PVK',
+	  'Chania, International, Airport, Ioannis, Daskalogiannis, CHQ',
+	  'Zakynthos, International, Airport, Dionysios, Solomos, ZTH',
+	  'Kalamata, International, Airport, Captain, Vasilis, Konstantakopoulos, KLX',
+	  'Heraklion, Airport, N, Kazantzakis, HER',
+	  'Aéroport, international, de, l, île, de, Kos, KGS',
+	  'Rhodes, International, Airport, Diagoras, RHO',
+	  'Mitilini, Airport, Odysseas, Elytis, MJT',
+	  'Mykonos, International, Airport, JMK',
+	  'Santorini, Airport, JTR',
+	  'Milos, Airport, MLO',
+	  'Kefalonia, International, Airport, Anna, Pollatou, EFL',
+	  'Samos, Airport, SMI',
+	  'Araxos, Airport, GPA',
+	  'Thessaloniki, International, Airport, Macedonia, SKG',
+	  'Kastoria, Airport, Aristotle, KSO',
+	  'Karpathos, Airport, AOK',
+	  'Ioannina, National, Airport, King, Pyrros, IOA',
+	  'Astypalaia, Island, National, Airport, JTY',
+	  'Sitia, Public, Airport, Vitsentzos, Kornaros, JSH',
+	  'Kozani, State, Airport, Filippos, KZI',
+	  'Ikaria, National, Airport, JIK',
+	  'Nea, Anchialos, National, Airport, VOL',
+	  'Skiathos, International, Airport, Alexandros, Papadiamantis, JSI',
+	  'Naxos, Airport, Apollon, JNX',
+	  'Corfu, International, Airport, Ioannis, Kapodistrias, CFO',
+	  'Paros, Airport, PAS',
+	  'Chios, Airport, Omiros, JKH',
+	  'Kastellorizo, Airport, KZS',
+	  'Skyros, Island, National, Airport, SKU',
+	  'Kavala, Airport, Alexander, the, Great, KVA',
+	  'Lemnos, International, Airport, Hephaestus, LXS',
+	  'Alexandros, Onasis, Kythira, Airport, KIT',
+	  'Alexandroupolis, Airport, Democritus, AXD',
+	  'Kasos, Island, Public, Airport, KSJ',
+	  'Kalymnos, Island, National, Airport, JKL',
+	  'Eleftherios, Venizelos, International, Airport, LGAV',
+	  'Heraklion, International, Nikos, Kazantzakis, Airport, LGIR',
+	  'Thessaloniki, Macedonia, International, Airport, LGTS',
+	
+	
+	
+	
+	
+	  // Add more locations as needed
+	];
+  
+  // Set up the location inputs for each input field
+  setupLocationInput('location-input-1', 'location-list-1', locations1);
+  setupLocationInput('location-input-2', 'location-list-2', locations2);
+  setupLocationInput('location-input-3', 'location-list-3', locations3);
+  setupLocationInput('location-input-4', 'location-list-4', locations4);
+  
+
+
 
 
 
