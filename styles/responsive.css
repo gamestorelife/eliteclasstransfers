@@ -1268,9 +1268,10 @@ width: 100%;
 	}
 	.home_slider_content h1:nth-child(2)
 	{
-		font-size: 90px;
-		margin-top: -18px;
-		font-weight: 550;
+		font-size: 59px;
+		position: relative;
+		margin-top: 513px;
+		font-weight: 600;
 		color: #2b240e;
 	}
 	#g-trans {
@@ -3683,7 +3684,7 @@ table {
 	}
 	.home_slider_content h1:nth-child(2)
 	{
-    	font-size: 46px;
+    	font-size: 27px;
     	margin-top: 43px;	
 		font-weight: 550;
 		color: #2b240e;
