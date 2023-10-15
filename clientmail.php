@@ -28,16 +28,16 @@ $mail = new PHPMailer(true);
    $mail->Host = 'smtp.hostinger.com';
    $mail->Port = 465;
    $mail->SMTPAuth = true;
-   $mail->Username = 'no-reply@mykonosbooker.com';
-   $mail->Password = 'Nomykonos11!';
+   $mail->Username = 'no-reply@eliteclasstransfers.com';
+   $mail->Password = 'Noeliteclasstransfers23**';
    $mail->SMTPSecure = 'ssl';                                 // TCP port to connect to
 
     // Recipients
-    $mail->setFrom('no-reply@mykonosbooker.com', 'Mykonos Booker');
+    $mail->setFrom('no-reply@eliteclasstransfers.com', 'Elite Class Transfers');
     $mail->addAddress($email);     // Add a recipient
 
-    $mail->Subject = 'Welcome to MykonosBooker';
-    $mail->Body = 'Thank you For Contacting MykonosBooker';
+    $mail->Subject = 'Welcome to Elite Class Transfers';
+    $mail->Body = 'Thank you For Elite Class Transfers';
      $mail->msgHTML(file_get_contents('message.html'), __DIR__);
 
 

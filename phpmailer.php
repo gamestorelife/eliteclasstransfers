@@ -24,23 +24,18 @@ $phone = $_POST['subject'];
    $mail->Host = 'smtp.hostinger.com';
    $mail->Port = 465;
    $mail->SMTPAuth = true;
-   $mail->Username = 'no-reply@mykonosbooker.com';
-   $mail->Password = 'Nomykonos11!';
+   $mail->Username = 'no-reply@eliteclasstransfers.com';
+   $mail->Password = 'Noeliteclasstransfers23**';
    $mail->SMTPSecure = 'ssl';
    $mail->isHTML(true);
    $mail->setFrom('no-reply@mykonosbooker.com', 'Mykonos Booker');
-   $mail->addAddress('info@mykonosbooker.com', $name);
+   $mail->addAddress('freerapper666@gmail.com', $name);
    $mail->Subject = 'Client Has been submit on MykonosBooker';
 
    $mail->Body = "Name: $name <br>Email: $email<br>Phone: $phone<br>Comment: $comments";
 
 
-   //$mail->Body = 'A Clint has been submit our Form. Kindly contact ASAP';
-   //$mail->msgHTML(file_get_contents('message.html'), __DIR__);
-  // $mail->addReplyTo('info@mykonosbooker.com', 'Mykonos Booker');
-   // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-   
-   //$mail->addAttachment('attachment.txt');
+
    
   if(!$mail->send()) {
     echo 'Email could not be sent.';
