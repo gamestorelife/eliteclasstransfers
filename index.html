@@ -1860,8 +1860,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 														
 													</select>
 												</div>
-												<button class="button search_button" type="submit" >Book Now<span></span><span></span><span></span></button>
+												<button class="button search_button" id="rental-button" type="button" >Book Now<span></span><span></span><span></span></button>
 											</div>
+
+											<dialog id="rental-dialog">
+												<div>
+													<center>
+														<p>Please fill the form so we can reach ASAP!</p>
+														<input type="text" id="contact_form_name" name="name"  class="contact_form_name input_field" placeholder="Name" required="required" data-error="Name is required.">
+														<input type="email" id="contact_form_email" name="email" class="contact_form_email input_field" placeholder="E-mail" required="required" data-error="Email is required.">
+														<input required type="tel" id="contact_form_subject"  name="subject" class="contact_form_subject input_field" placeholder="Phone Number" required="required" data-error="Phone is required.">
+														<button class="button search_button" id="rental-button" type="submit" >
+															Book Now
+															<span></span><span></span><span></span></button>
+													</center>
+													
+												</div>
+												
+												
+											</dialog>
 										</form>
 										
 
@@ -4150,13 +4167,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <script>
 const openButton = document.getElementById('form_submit_button');
-
+const openButtonR = document.getElementById('rental-button');
 const myDialog = document.getElementById('my-dialog');
+
+
+
+const myDialogR = document.getElementById('rental-dialog');
 const form = document.getElementById('contact_form');
+const Rentform = document.getElementById('rental-form');
 
 //  openButton.addEventListener('click', () => {
 //      myDialog.showModal();
 //    });
+
+openButtonR.addEventListener('click', () => {
+      myDialogR.showModal();
+   });
 
 
 	
@@ -4191,6 +4217,9 @@ reloadPage()
 
 });
 
+
+
+
 function reloadPage() {
 	
 
@@ -4206,16 +4235,47 @@ function reloadPage() {
 	
 
 
-
-const Rentform = document.getElementById('rental-form');
-
 Rentform.addEventListener('submit', (event) => {
   event.preventDefault();
+  myDialog.showModal();
+  
   const formData = new FormData(Rentform);
-  for (const [key, value] of formData.entries()) {
-	console.log(`${key}: ${value}`);
-  }
+
+  const xhr1 = new XMLHttpRequest();
+  xhr1.open('POST', 'databaseconnect.php');
+  xhr1.onload = () => {
+    // handle response from page1.php
+  };
+  xhr1.send(formData);
+
+  const xhr2 = new XMLHttpRequest();
+  xhr2.open('POST', 'clientmail.php');
+  xhr2.onload = () => {
+    // handle response from page2.php
+  };
+  xhr2.send(formData);
+
+  const xhr3 = new XMLHttpRequest();
+  xhr3.open('POST', 'send-email.php');
+  xhr3.onload = () => {
+    // handle response from page3.php
+  };
+  xhr3.send(formData);
+
+reloadPage()
+
 });
+
+
+
+
+//Rentform.addEventListener('submit', (event) => {
+ // event.preventDefault();
+ // const formData = new FormData(Rentform);
+ // for (const [key, value] of formData.entries()) {
+	//console.log(`${key}: ${value}`);
+ // }
+//});
 
 
 
