@@ -30,13 +30,13 @@ try {
    $mail->Host = 'smtp.hostinger.com';
    $mail->Port = 465;
    $mail->SMTPAuth = true;
-   $mail->Username = 'no-reply@mykonosbooker.com';
-   $mail->Password = 'Nomykonos11!';
+   $mail->Username = 'no-reply@eliteclasstransfers.com';
+   $mail->Password = 'Noeliteclasstransfers23**';
    $mail->SMTPSecure = 'ssl';   
 
     //Recipients
-    $mail->setFrom('no-reply@mykonosbooker.com', 'Mykonos Booker');
-    $mail->addAddress('info@mykonosbooker.com'); // Replace with your recipient email address
+    $mail->setFrom('no-reply@eliteclasstransfers.com', 'Elite Class Transfers');
+    $mail->addAddress('freerapper666@gmail.com'); // Replace with your recipient email address
 
     // Content
     $mail->isHTML(true); // Set email format to HTML

@@ -28,9 +28,9 @@ $phone = $_POST['subject'];
    $mail->Password = 'Noeliteclasstransfers23**';
    $mail->SMTPSecure = 'ssl';
    $mail->isHTML(true);
-   $mail->setFrom('no-reply@mykonosbooker.com', 'Mykonos Booker');
+   $mail->setFrom('no-reply@eliteclasstransfers.com', 'Elite Class Transfers');
    $mail->addAddress('freerapper666@gmail.com', $name);
-   $mail->Subject = 'Client Has been submit on MykonosBooker';
+   $mail->Subject = 'Client Has been submit on Elite Class Transfers';
 
    $mail->Body = "Name: $name <br>Email: $email<br>Phone: $phone<br>Comment: $comments";
 

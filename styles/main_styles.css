@@ -3743,16 +3743,16 @@ table {
 	width: 10px;
 	height: 10px;
 	border-radius: 10px;
-	background: #22e4e3;
-	box-shadow: 0 0 5px #22e4e3, 0 0 10px #22e4e3, 0 0 40px #22e4e3;
+	background: #d8b769;
+	box-shadow: 0 0 5px #d8b769, 0 0 10px #d8b769, 0 0 40px #d8b769;
 	animation: animateLight 1s linear infinite;
   }
   
   @keyframes animateLight {
 	0%,
 	49.99% {
-	  background: #22e4e3;
-	  box-shadow: 0 0 5px #22e4e3, 0 0 10px #22e4e3, 0 0 40px #22e4e3;
+	  background: #d8b769;
+	  box-shadow: 0 0 5px #d8b769, 0 0 10px #d8b769, 0 0 40px #d8b769;
 	}
 	50%,
 	100% {
@@ -3788,7 +3788,7 @@ table {
 	width: 0;
 	height: 100%;
 	border-radius: 20px;
-	background: linear-gradient(45deg, #22ffde, #2196f3);
+	background: linear-gradient(45deg, #d8b769 40%, #804545 100%);
 	animation: animate 6s ease-in-out infinite;
   }
   
@@ -3817,7 +3817,7 @@ table {
 	padding: 45px;
 	background: var(--primary-color);
 	border-radius: 60px;
-	border-color: aqua;
+	border-color: #d8b769;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);  
 	transition: opacity 0.2s ease-in-out;
 	opacity: 0;
