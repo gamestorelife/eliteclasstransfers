@@ -4233,7 +4233,7 @@ function reloadPage() {
 	
 }
 	
-
+//Rental Car Form
 
 Rentform.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -4242,21 +4242,21 @@ Rentform.addEventListener('submit', (event) => {
   const formData = new FormData(Rentform);
 
   const xhr1 = new XMLHttpRequest();
-  xhr1.open('POST', 'databaseconnect.php');
+  xhr1.open('POST', 'clientmail.php');
   xhr1.onload = () => {
     // handle response from page1.php
   };
   xhr1.send(formData);
 
   const xhr2 = new XMLHttpRequest();
-  xhr2.open('POST', 'clientmail.php');
+  xhr2.open('POST', 'send-email.php');
   xhr2.onload = () => {
     // handle response from page2.php
   };
   xhr2.send(formData);
 
   const xhr3 = new XMLHttpRequest();
-  xhr3.open('POST', 'send-email.php');
+  xhr3.open('POST', 'databaseconnect.php');
   xhr3.onload = () => {
     // handle response from page3.php
   };

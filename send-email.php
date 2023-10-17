@@ -12,14 +12,16 @@ require 'PHPMailer-master/src/SMTP.php';
 require 'PHPMailer-master/PHPMailerAutoload.php';
 
 // Get the form data
+$pickupLocation = $_POST['pickupLocation'];
+$dropLocation = $_POST['dropLocation'];
+$pickDate = $_POST['pickDate'];
+$dropDate = $_POST['dropDate'];
+$pickTime = $_POST['pickTime'];
+$dropTime = $_POST['dropTime'];
+$carType = $_POST['car-type'];
 $name = $_POST['name'];
 $email = $_POST['email'];
 $phone = $_POST['subject'];
-$pickupDate = $_POST['pickup-date'];
-$dropoffDate = $_POST['dropoff-date'];
-$brand = $_POST['brand'];
-$insurance = $_POST['insurance'];
-$comments = $_POST['message'];
 
 // Create a new PHPMailer instance
 $mail = new PHPMailer(true);
@@ -41,8 +43,7 @@ try {
     // Content
     $mail->isHTML(true); // Set email format to HTML
     $mail->Subject = 'New rental car booking';
-    $mail->Body = "Name: $name<br>Email: $email<br>Phone: $phone<br>Pickup Date: $pickupDate<br>
-    Drop-off Date: $dropoffDate<br>Brand: $brand<br>Insurance: $insurance <br>Comment: $comments";
+    $mail->Body = "Pick-Up Location: $pickupLocation<br>Drop-Off Location: $dropLocation<br>Pick-Up Date: $pickDate<br>Drop-Off Date: $dropDate<br>Pick-Up Time: $pickTime<br>Drop-Off Time: $dropTime<br>Car Type: $carType<br>Name: $name<br>Email: $email<br>Phone: $phone";
 
     $mail->send();
     echo 'Message has been sent';
