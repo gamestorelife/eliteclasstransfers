@@ -38,7 +38,7 @@ try {
 
     //Recipients
     $mail->setFrom('no-reply@eliteclasstransfers.com', 'Elite Class Transfers');
-    $mail->addAddress('freerapper666@gmail.com'); // Replace with your recipient email address
+    $mail->addAddress('info@eliteclasstransfers.com'); // Replace with your recipient email address
 
     // Content
     $mail->isHTML(true); // Set email format to HTML
