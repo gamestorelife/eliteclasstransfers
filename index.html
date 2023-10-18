@@ -1866,10 +1866,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 											<dialog id="rental-dialog">
 												<div>
 													<center>
-														<p>Last Step…</p>
-														<input type="text" id="contact_form_name" name="name"  class="contact_form_name input_field" placeholder="Name" required="required" data-error="Name is required.">
-														<input type="email" id="contact_form_email" name="email" class="contact_form_email input_field" placeholder="E-mail" required="required" data-error="Email is required.">
-														<input required type="tel" id="contact_form_subject"  name="subject" class="contact_form_subject input_field" placeholder="Phone Number" required="required" data-error="Phone is required.">
+														<div class="d-flex justify-content-between">
+															<div class="mb-4">
+																<p>Last Step…</p>
+															</div>
+															
+															<div class="escape-area mb-4">
+																<button id="escape-but" class="scape-button" type="button" style="background: #f0ffff00; border: none;">
+																	<i class="fa-solid fa-circle-xmark" style="color: white;"></i>
+																</button>
+																
+															</div>
+															
+														</div>
+														
+														<input type="text" id="contact_form_name" name="name"  class="contact_form_name input_field w-100" placeholder="Name" required="required" data-error="Name is required.">
+														<input type="email" id="contact_form_email" name="email" class="contact_form_email input_field w-100" placeholder="E-mail" required="required" data-error="Email is required.">
+														<input required type="tel" id="contact_form_subject"  name="subject" class="contact_form_subject input_field w-100" placeholder="Phone Number" required="required" data-error="Phone is required.">
 														<button class="button search_button" id="rental-button" type="submit" >
 															Request Quote
 															<span></span><span></span><span></span></button>
@@ -1883,7 +1896,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 										
 
 
-						<!-- Book a Tranfer -->
+						<!-- Book a Transfer -->
 										<form class="search_panel_content d-flex flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
 											<div class="dash-book-trans">
 												<div class="check-in-hire justify-content-around">
@@ -2205,8 +2218,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					
 												</div>
 	
-												<button class="button search_button"  >Book Now<span></span><span></span><span></span></button>
+												<button class="button search_button" type="button" >Book Now<span></span><span></span><span></span></button>
 											</div>
+
+											<dialog id="transfers-dialog">
+												<div>
+													<center>
+														<p>Last Step…</p>
+														<input type="text" id="contact_form_name" name="name"  class="contact_form_name input_field" placeholder="Name" required="required" data-error="Name is required.">
+														<input type="email" id="contact_form_email" name="email" class="contact_form_email input_field" placeholder="E-mail" required="required" data-error="Email is required.">
+														<input required type="tel" id="contact_form_subject"  name="subject" class="contact_form_subject input_field" placeholder="Phone Number" required="required" data-error="Phone is required.">
+														<button class="button search_button" id="rental-button" type="submit" >
+															Request Quote
+															<span></span><span></span><span></span></button>
+													</center>
+													
+												</div>
+												
+												
+											</dialog>
 										</form>
 										
 
@@ -3673,7 +3703,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<!-- Testimonial Item -->
 							<div class="owl-item">
 								<div class="test_item">
-									<div class="test_image"><img src="images/test_3.jpg" alt=""></div>
+									<div class="test_image"><img src="images/luxury-jeep-rub.png" alt=""></div>
 									<div class="test_icon  d-none"><img src="images/kayak.png" alt=""></div>
 									<div class="test_content_container">
 										<div class="test_content">
@@ -3683,8 +3713,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 											</div>
 											<div class="test_quote_title"></div>
 											<p class="test_quote_text">
-												
-												The Jeep Wrangler is the ideal companion for those who crave off-road adventures and scenic drives through picturesque villages.
+												Don't miss the opportunity to experience Greece in the lap of luxury.
 											</p>
 										</div>
 									</div>
@@ -4168,6 +4197,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script>
 const openButton = document.getElementById('form_submit_button');
 const openButtonR = document.getElementById('rental-button');
+
+const closeButtonR = document.getElementById('escape-but');
 const myDialog = document.getElementById('my-dialog');
 
 
@@ -4184,6 +4215,9 @@ openButtonR.addEventListener('click', () => {
       myDialogR.showModal();
    });
 
+closeButtonR.addEventListener('click', () => {
+      myDialogR.close();
+   });
 
 	
 form.addEventListener('submit', (event) => {

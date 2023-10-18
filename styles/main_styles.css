@@ -2200,7 +2200,7 @@ select{
 }
 .contact_form_subject
 {
-	width: 100%;
+	width: calc((200% - 30px) / 2);
 	margin-top: 11px;
 	font-size: 16px;
 }
@@ -3850,5 +3850,21 @@ table {
   #rental-dialog {
 	overflow: hidden;
   }
+  #transfers-dialog {
+	overflow: hidden;
+  }
+
+  .escape-area {
+	
+    position: relative;
+    margin-top: -20px;
+	display: flex;
+  }
+.scape-button {
+	background: #f0ffff00;
+    border: 0;
+}
+
+
 
  
