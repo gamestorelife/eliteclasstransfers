@@ -1896,18 +1896,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 										
 
 
-						<!-- Book a Transfer -->
-										<form class="search_panel_content d-flex flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+						<!-- Get a Transfer -->
+										<form id="GT-form" method="post" class="search_panel_content d-flex flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
 											<div class="dash-book-trans">
 												<div class="check-in-hire justify-content-around">
 													<div class="search_item" id="hire-days">
 														<div>Pick Up Location</div>
-														<input id="location-input-3" type="text" class="check_in search_input" placeholder="Pick Up Location">
+														<input id="location-input-3" type="text" class="check_in search_input" placeholder="Pick Up Location" name="gt-pickUplocation" required="required">
 														<ul style=" color: white;" id="location-list-3"></ul>
 													</div>
 													<div class="search_item" id="hire-hours">
 														<div>Drop Off Location</div>
-														<input id="location-input-4" type="text" class="check_in search_input" placeholder="Drop Off Location">
+														<input id="location-input-4" type="text" class="check_in search_input" placeholder="Drop Off Location" name="gt-dropOfflocation" required="required">
 														<ul style=" color: white;" id="location-list-4"></ul>
 													</div>
 												</div>
@@ -1915,11 +1915,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 												<div class="transfer-personas d-flex flex-lg-row">
 													<div class="search_item">
 														<div>Pick Up Date</div>
-														<input id="date-book-trans" type="text" class="check_in search_input" placeholder="Date">
+														<input id="date-book-trans" type="text" class="check_in search_input" placeholder="Date" name="gt-pickUpDate">
 													</div>
 													<div class="search_item" id="hire-tdays">
 														<div>Pick Up Time</div>
-														<select aria-label="Pick-up time" name="adults" id="roundedk" class="dropdown_item_select search_input" placeholder="06:00">
+														<select aria-label="Pick-up time" name="gt-pickUpTime" id="roundedk" class="dropdown_item_select search_input" placeholder="06:00">
 															<option>00:00</option>
 															<option>00:15</option>
 															<option>00:30</option>
@@ -2018,7 +2018,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 													</div>
 													<div class="search_item" id="flight-number">
 														<div>Flight Number</div>
-														<input id="" type="text" class="check_in search_input" placeholder="Flight No">
+														<input id="" type="text" class="check_in search_input" placeholder="Flight No" name="flight-number">
 													</div>
 	
 												</div>
@@ -2036,11 +2036,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	
 													<div class="search_item">
 														<div>Pick Up Date</div>
-														<input id="return-date-hide" type="text" class="check_in search_input" placeholder="Date">
+														<input id="return-date-hide" type="text" class="check_in search_input" placeholder="Date" name="pickUpDate-return">
 													</div>
 													<div class="search_item">
 														<div>Pick Up time</div>
-														<select name="adults" id="roundedk" class="dropdown_item_select search_input">
+														<select name="pickUpTime-return" id="roundedk" class="dropdown_item_select search_input">
 															<option>00:00</option>
 															<option>00:15</option>
 															<option>00:30</option>
@@ -2139,7 +2139,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 													</div>
 													<div class="search_item" id="flight-number">
 														<div>Flight Number</div>
-														<input id="" type="text" class="check_in search_input" placeholder="Flight No">
+														<input id="" type="text" class="check_in search_input" placeholder="Flight No" name="flight-number-return">
 													</div>
 												</div>
 	
@@ -2148,87 +2148,100 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 												<div class="transfer-personas d-flex flex-lg-row"> 
 													<div class="search_item tranfer-bok">
 														<div>Adults</div>
-														<select name="gtranfer-adults" id="roundedk" class="dropdown_item_select search_input">
+														<select name="gt-adults" id="roundedk" class="dropdown_item_select search_input">
 															<option selected="selected" disabled="disabled">Adults</option>
-															<option>1</option>
-															<option>2</option>
-															<option>3</option>
-															<option>4</option>
-															<option>5</option>
-															<option>6</option>
-															<option>7</option>
-															<option>8</option>
-															<option>9</option>
-															<option>10</option>
-															<option>11</option>
-															<option>12</option>
-															<option>13</option>
-															<option>14</option>
-															<option>15</option>
-															<option>16</option>
-															<option>17</option>
-															<option>18</option>
-															<option>19</option>
+															<option value="1">1</option>
+															<option value="2">2</option>
+															<option value="3">3</option>
+															<option value="4">4</option>
+															<option value="5">5</option>
+															<option value="6">6</option>
+															<option value="7">7</option>
+															<option value="8">8</option>
+															<option value="9">9</option>
+															<option value="10">10</option>
+															<option value="11">11</option>
+															<option value="12">12</option>
+															<option value="13">13</option>
+															<option value="14">14</option>
+															<option value="15">15</option>
+															<option value="16">16</option>
+															<option value="17">17</option>
+															<option value="18">18</option>
+															<option value="19">19</option>
 															
 														</select>
 													</div>
 													<div class="search_item tranfer-bok">
 														<div>children</div>
-														<select name="children" id="roundedk" class="dropdown_item_select search_input">
-															<option selected="selected" disabled="disabled">children</option>
-															<option>1</option>
-															<option>2</option>
-															<option>3</option>
-															<option>4</option>
-															<option>5</option>
-															<option>6</option>
-															<option>7</option>
-															<option>8</option>
-															<option>9</option>
-															<option>10</option>
-															<option>11</option>
-															<option>12</option>
-															<option>13</option>
-															<option>14</option>
-															<option>15</option>
-															<option>16</option>
-															<option>17</option>
-															<option>18</option>
-															<option>19</option>
+														<select name="gt-children" id="roundedk" class="dropdown_item_select search_input">
+															<option selected="selected" disabled="disabled">Children</option>
+															<option value="1">1</option>
+															<option value="2">2</option>
+															<option value="3">3</option>
+															<option value="4">4</option>
+															<option value="5">5</option>
+															<option value="6">6</option>
+															<option value="7">7</option>
+															<option value="8">8</option>
+															<option value="9">9</option>
+															<option value="10">10</option>
+															<option value="11">11</option>
+															<option value="12">12</option>
+															<option value="13">13</option>
+															<option value="14">14</option>
+															<option value="15">15</option>
+															<option value="16">16</option>
+															<option value="17">17</option>
+															<option value="18">18</option>
+															<option value="19">19</option>
 	
 														</select>
 													</div>
 													<div class="search_item">
 														<div>Luggage</div>
-														<select name="children" id="roundedk" class="dropdown_item_select search_input">
+														<select name="gt-luggage" id="roundedk" class="dropdown_item_select search_input" >
 															<option selected="selected" disabled="disabled">Luggage</option>
-															<option>1</option>
-															<option>2</option>
-															<option>3</option>
-															<option>4</option>
-															<option>5</option>
-															<option>6</option>
-															<option>7</option>
-															<option>8</option>
-															<option>9</option>
-															<option>10</option>
+															<option value="1">1</option>
+															<option value="2">2</option>
+															<option value="3">3</option>
+															<option value="4">4</option>
+															<option value="5">5</option>
+															<option value="6">6</option>
+															<option value="7">7</option>
+															<option value="8">8</option>
+															<option value="9">9</option>
+															<option value="10">10</option>
 															
 														</select>
 													</div>
 					
 												</div>
 	
-												<button class="button search_button" type="button" >Book Now<span></span><span></span><span></span></button>
+												<button class="button search_button" type="button" id="gt-button">Book Now<span></span><span></span><span></span></button>
 											</div>
 
 											<dialog id="transfers-dialog">
 												<div>
 													<center>
-														<p>Last Step…</p>
-														<input type="text" id="contact_form_name" name="name"  class="contact_form_name input_field" placeholder="Name" required="required" data-error="Name is required.">
-														<input type="email" id="contact_form_email" name="email" class="contact_form_email input_field" placeholder="E-mail" required="required" data-error="Email is required.">
-														<input required type="tel" id="contact_form_subject"  name="subject" class="contact_form_subject input_field" placeholder="Phone Number" required="required" data-error="Phone is required.">
-														<button class="button search_button" id="rental-button" type="submit" >
+														<div class="d-flex justify-content-between">
+															<div class="mb-4">
+																<p>Last Step…</p>
+															</div>
+															
+															<div class="escape-area mb-4">
+																<button id="gt-escape-but" class="scape-button" type="button" style="background: #f0ffff00; border: none;">
+																	<i class="fa-solid fa-circle-xmark" style="color: white;"></i>
+																</button>
+																
+															</div>
+															
+														</div>
+														
+														<input type="text" id="contact_form_name" name="name"  class="contact_form_name input_field w-100" placeholder="Name" required="required" data-error="Name is required.">
+														<input type="email" id="contact_form_email" name="email" class="contact_form_email input_field w-100" placeholder="E-mail" required="required" data-error="Email is required.">
+														<input required type="tel" id="contact_form_subject"  name="subject" class="contact_form_subject input_field w-100" placeholder="Phone Number" required="required" data-error="Phone is required.">
+														<button class="button search_button"  type="submit" >
 															Request Quote
 															<span></span><span></span><span></span></button>
 													</center>
@@ -4198,14 +4211,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 const openButton = document.getElementById('form_submit_button');
 const openButtonR = document.getElementById('rental-button');
 
+const openButtonGT = document.getElementById('gt-button')
+
 const closeButtonR = document.getElementById('escape-but');
+const closeButtonGT = document.getElementById('gt-escape-but');
 const myDialog = document.getElementById('my-dialog');
 
 
 
 const myDialogR = document.getElementById('rental-dialog');
+const myDialogGT = document.getElementById('transfers-dialog');
+
 const form = document.getElementById('contact_form');
 const Rentform = document.getElementById('rental-form');
+const GTform = document.getElementById('GT-form');
 
 //  openButton.addEventListener('click', () => {
 //      myDialog.showModal();
@@ -4218,6 +4237,15 @@ openButtonR.addEventListener('click', () => {
 closeButtonR.addEventListener('click', () => {
       myDialogR.close();
    });
+
+ openButtonGT.addEventListener('click', () => {
+	myDialogGT.showModal();
+   });
+
+closeButtonGT.addEventListener('click', () => {
+	myDialogGT.close();
+   });
+
 
 	
 form.addEventListener('submit', (event) => {
@@ -4300,15 +4328,53 @@ reloadPage()
 
 });
 
+// Get Transfers Form
+
+GTform.addEventListener('submit', (event) => {
+  event.preventDefault();
+  myDialog.showModal();
+  
+  const formData = new FormData(GTform);
+
+  const xhr1 = new XMLHttpRequest();
+  xhr1.open('POST', 'clientmail.php');
+  xhr1.onload = () => {
+    // handle response from page1.php
+  };
+  xhr1.send(formData);
+
+  const xhr2 = new XMLHttpRequest();
+  xhr2.open('POST', 'gettranfers-email.php');
+  xhr2.onload = () => {
+    // handle response from page2.php
+  };
+  xhr2.send(formData);
+
+  const xhr3 = new XMLHttpRequest();
+  xhr3.open('POST', 'databaseconnect.php');
+  xhr3.onload = () => {
+    // handle response from page3.php
+  };
+  xhr3.send(formData);
+
+reloadPage()
+
+});
 
 
 
-//Rentform.addEventListener('submit', (event) => {
- // event.preventDefault();
- // const formData = new FormData(Rentform);
- // for (const [key, value] of formData.entries()) {
-	//console.log(`${key}: ${value}`);
- // }
+
+
+
+
+
+
+//GTform.addEventListener('submit', (event) => {
+ //event.preventDefault();
+ //const formData = new FormData(GTform);
+//for (const [key, value] of formData.entries()) {
+//	console.log(`${key}: ${value}`);
+//}
 //});
 
 
