@@ -1149,7 +1149,7 @@ width: 100%;
 		margin-right: -20px;
 	}
 	.home_slider_content h1:nth-child(2) {
-		font-size: 68px;
+		font-size: 60px;
 	}
 
 
@@ -1281,20 +1281,19 @@ width: 100%;
 	}
 	.home_slider_content h1:nth-child(2)
 	{
-		font-size: 53px;
+		font-size: 50px;
 		position: relative;
 		font-weight: 600;
 		color: #dcbd5c;
 	}
 	#g-trans {
-		font-size: 38px;
+		
 		color: #ffffff;
 		font-weight: 550;
-		margin-top: 86px;
-		margin-top: 30px;
+		
 	}
 	#h-driver {
-		font-size: 38px;
+		
 		color: #ffffff;
 	}
 
@@ -1533,7 +1532,7 @@ width: 100%;
 	}
 
 	.home_slider_content h1:nth-child(2) {
-		font-size: 46px;
+		font-size: 36px;
 	}
 
 
@@ -3699,21 +3698,22 @@ table {
 	}
 	.home_slider_content h1:nth-child(2)
 	{
-    	font-size: 27px;
+    	font-size: 35px;
     	margin-top: 43px;	
 		font-weight: 550;
 		color: #2b240e;
 	}
 	#g-trans {
-		font-size: 38px;
+		
 		color: #ffffff;
 		font-weight: 550;
-		margin-top: 86px;
+		
+
 	}
 	#h-driver {
-		font-size: 38px;
+		
 		color: #ffffff;
-		margin-top: 30px;
+		
 	}
 	
 	.home_slider_button
