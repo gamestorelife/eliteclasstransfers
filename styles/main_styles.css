@@ -419,7 +419,7 @@ section
 }
 .main_nav_col
 {
-	height: 143px;
+	height: 90px;
 	-webkit-transition: all 400ms ease;
 	-moz-transition: all 400ms ease;
 	-ms-transition: all 400ms ease;
@@ -469,8 +469,8 @@ section
 	-ms-transform: translateY(2px);
 	-o-transform: translateY(2px);
 	transform: translateY(2px);
-	width: 250px;
-	
+	width: 175px;
+	padding-top: 15px;
 }
 
 /*********************************
