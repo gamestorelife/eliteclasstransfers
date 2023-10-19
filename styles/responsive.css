@@ -1283,7 +1283,7 @@ width: 100%;
 	{
 		font-size: 50px;
 		position: relative;
-		font-weight: 600;
+		font-weight: 300;
 		color: #dcbd5c;
 	}
 	#g-trans {
@@ -3700,7 +3700,7 @@ table {
 	{
     	font-size: 35px;
     	margin-top: 43px;	
-		font-weight: 550;
+		font-weight: 300;
 		color: #2b240e;
 	}
 	#g-trans {
