@@ -1120,7 +1120,7 @@ width: 100%;
 3. 1280px
 ************/
 
-@media only screen and (max-width: 991px)
+@media only screen and (max-width: 1210px)
 {
 	.cta_slider_prev
 	{
@@ -1143,6 +1143,16 @@ width: 100%;
 	{
 		right: 15px;
 	}
+	.test_quote_text {
+		font-size: 12px;
+		margin-top: -15px;
+		margin-right: -20px;
+	}
+	.home_slider_content h1:nth-child(2) {
+		font-size: 68px;
+	}
+
+
 }
 
 
@@ -1231,6 +1241,8 @@ width: 100%;
 
 
 
+	
+
 
 
 
@@ -1269,11 +1281,10 @@ width: 100%;
 	}
 	.home_slider_content h1:nth-child(2)
 	{
-		font-size: 59px;
+		font-size: 53px;
 		position: relative;
-		margin-top: 513px;
 		font-weight: 600;
-		color: #2b240e;
+		color: #dcbd5c;
 	}
 	#g-trans {
 		font-size: 38px;
@@ -1521,7 +1532,9 @@ width: 100%;
 		
 	}
 
-
+	.home_slider_content h1:nth-child(2) {
+		font-size: 46px;
+	}
 
 
 	#main2img {
@@ -2936,6 +2949,7 @@ table {
 @media only screen and (max-width: 575px)
 {
 
+	
 
 	.home {
 		height: 350px;
