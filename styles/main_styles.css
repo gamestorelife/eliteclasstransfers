@@ -988,7 +988,7 @@ select{
 	-o-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	z-index: 11;
-	padding-top: 213px;
+	padding-top: 126px;
 }
 .home_slider_content h1
 {
@@ -1412,6 +1412,7 @@ select{
 	color: #FFFFFF;
 	text-transform: uppercase;
 	margin-bottom: 2px;
+	padding-left: 8px;
 	
 }
 
