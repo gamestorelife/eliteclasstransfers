@@ -3373,7 +3373,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					</div>
 				</div>
 			</div>
-			<div class="row intro_items">
+			<div class="row intro_items d-none">
 
 				<!-- Intro Item -->
 
@@ -3583,7 +3583,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								<div class="offers_image_container">
 									
 									<div class="offers_image_background" style="background-image:url(images/luxury-rr-of-1.png);"></div>
-									<div class="offer_name"><a href="#">Top rental cars</a></div>
+									<div class="offer_name" id="toprental"><a href="#">Top rental cars</a></div>
 								</div>
 							</div>
 							<div class="col-lg-6">
@@ -3622,7 +3622,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								<div class="offers_image_container">
 								
 									<div class="offers_image_background" style="background-image:url(images/trans-offer.png)"></div>
-									<div class="offer_name"><a href="#">Get Transfers</a></div>
+									<div class="offer_name" id="gettrans"><a href="#">Get Transfers</a></div>
 								</div>
 							</div>
 							<div class="col-lg-6">
@@ -3659,7 +3659,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								<div class="offers_image_container">
 									
 									<div class="offers_image_background" style="background-image:url(images/luxury-b-Ra.png)"></div>
-									<div class="offer_name"><a href="#">luxury cars</a></div>
+									<div class="offer_name" id="luxurycar"><a href="#">luxury cars</a></div>
 								</div>
 							</div>
 							<div class="col-lg-6">
@@ -3695,7 +3695,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								<div class="offers_image_container">
 								
 									<div class="offers_image_background" style="background-image:url(images/hire-driver.png)"></div>
-									<div class="offer_name"><a href="#">hire a driver</a></div>
+									<div class="offer_name" id="hiredriver"><a href="#">hire a driver</a></div>
 								</div>
 							</div>
 							<div class="col-lg-6">
@@ -4263,12 +4263,41 @@ const Rentform = document.getElementById('rental-form');
 const GTform = document.getElementById('GT-form');
 const DRform = document.getElementById('hired-form');
 
+function autoclose () {
+	const dialogBox = document.getElementById('rental-dialog');
 
+	window.addEventListener('click', (event) => {
+  if (event.target === dialogBox) {
+    dialogBox.close();
+  }
+})
+};
 
+function autoclosetranfer () {
+	const dialogBox = document.getElementById('transfers-dialog');
+
+	window.addEventListener('click', (event) => {
+  if (event.target === dialogBox) {
+    dialogBox.close();
+  }
+})
+};
+
+function autoclosedriver () {
+	const dialogBox = document.getElementById('hired-dialog');
+
+	window.addEventListener('click', (event) => {
+  if (event.target === dialogBox) {
+    dialogBox.close();
+  }
+})
+};
 
 
 openButtonR.addEventListener('click', () => {
       myDialogR.showModal();
+	  autoclose();
+	  
    });
 
 closeButtonR.addEventListener('click', () => {
@@ -4277,6 +4306,7 @@ closeButtonR.addEventListener('click', () => {
 
  openButtonGT.addEventListener('click', () => {
 	myDialogGT.showModal();
+	autoclosetranfer();
    });
 
 closeButtonGT.addEventListener('click', () => {
@@ -4286,6 +4316,7 @@ closeButtonGT.addEventListener('click', () => {
 
    openButtonDri.addEventListener('click', () => {
 	myDialogDr.showModal();
+	autoclosedriver();
    });
 
    closeButtonDR.addEventListener('click', () => {
@@ -4293,8 +4324,34 @@ closeButtonGT.addEventListener('click', () => {
    });
 
 
+   document.getElementById('toprental').addEventListener('click', function() {
+ 		 myDialogR.showModal();
+		  autoclose();
+});
 
 
+document.getElementById('gettrans').addEventListener('click', function() {
+	myDialogGT.showModal();
+	autoclosetranfer();
+
+});
+
+
+document.getElementById('luxurycar').addEventListener('click', function() {
+	myDialogR.showModal();
+		  autoclose();
+});
+
+document.getElementById('hiredriver').addEventListener('click', function() {
+	myDialogDr.showModal();
+	autoclosedriver();
+});
+
+
+
+
+
+//Contact Form
 	
 form.addEventListener('submit', (event) => {
   event.preventDefault();

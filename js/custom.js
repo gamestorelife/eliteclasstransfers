@@ -45,14 +45,17 @@ window.onload = function() {
 
 
 
+
+
+
+
+
+
+
+
+
+
  //location auto complete Function
-
-
- 
-
-
-
-
 
  function setupLocationInput(inputId, listId, locations) {
 	const locationInput = document.getElementById(inputId);
