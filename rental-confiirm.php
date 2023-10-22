@@ -64,3 +64,75 @@ try {
 } catch (Exception $e) {
     echo "Message could not be sent. Error: {$mail->ErrorInfo}";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\PHPMailerAutoload;
+
+
+
+require 'PHPMailer-master/src/Exception.php';
+require 'PHPMailer-master/src/PHPMailer.php';
+require 'PHPMailer-master/src/SMTP.php';
+require 'PHPMailer-master/PHPMailerAutoload.php';
+
+// Get the form data
+
+$startDate = $_POST['startDate'];
+$pickUpTime = $_POST['hpickUpTime'];
+$adults = $_POST['hAdults'];
+$children = $_POST['hChildren'];
+$driverDays = $_POST['driverDays'];
+$driverHours = $_POST['driverHours'];
+$specialRequest = $_POST['message'];
+$name = $_POST['name'];
+$email = $_POST['email'];
+$phone = $_POST['subject'];
+
+$mail = new PHPMailer(true);
+
+
+    // Server settings
+    $mail = new PHPMailer();
+   $mail->isSMTP();
+   $mail->Host = 'smtp.hostinger.com';
+   $mail->Port = 465;
+   $mail->SMTPAuth = true;
+   $mail->Username = 'no-reply@eliteclasstransfers.com';
+   $mail->Password = 'Noeliteclasstransfers23**';
+   $mail->SMTPSecure = 'ssl';                                 // TCP port to connect to
+
+    // Recipients
+    $mail->setFrom('no-reply@eliteclasstransfers.com', 'Elite Class Transfers');
+    $mail->addAddress($email);     // Add a recipient
+
+    $mail->Subject = 'Welcome to Elite Class Transfers';
+    $mail->Body = 'Thank you For Elite Class Transfers';
+     $mail->msgHTML(file_get_contents('message.html'), __DIR__);
+
+
+
+
+   if(!$mail->send()) {
+    echo 'Email could not be sent.';
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
+} else {
+    echo '<center><h1>Email has been sent.</h1></center>';
+}
+
+
+
+?>
