@@ -2338,8 +2338,6 @@ select{
 	display: inline-block;
 	width: 31px;
 	height: 31px;
-	border: solid 1px #c8c8c8;
-	border-radius: 50%;
 	text-align: center;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
@@ -2370,7 +2368,7 @@ select{
 	-ms-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
 	transform: translateY(-50%);
-	font-size: 12px;
+	font-size: 30px;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;
