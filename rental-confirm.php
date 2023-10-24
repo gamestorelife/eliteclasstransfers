@@ -47,9 +47,7 @@ try {
    
 
      $imageUrl = 'https://i.ibb.co/gPdtqNw/image.png';
-     $imagewUrl = 'https://i.ibb.co/Js9J9yJ/Pngtree-whatsapp-icon-social-media-9015284.png';
-    $whatsAppURL = 'https://api.whatsapp.com/send?phone=+306977020552';
-
+     
     
     $emailContent = "<div style='text-align: center; display: inline-table;'>";
     $emailContent .= "<h1 style='color: #333; font-size: 24px;'>Thanks You For Contacting Elite Class Transfers</h1>";
@@ -73,9 +71,7 @@ try {
     $emailContent .= "<p style='font-size: 19px; font-weight: bold;'>Thank you & have fun!</p>";
     $emailContent .= "<p style='font-size: 19px; font-weight: bold;'>Or you call us Now on</p>";
     $emailContent .= "<p style='font-size: 19px; font-weight: bold;'> +30 6977 020 552</p>";
-    $emailContent .= "<a href='$whatsAppURL'>";
-    $emailContent .= "<img src='$imagewUrl' alt="WhatsApp Icon" />";
-    $emailContent .= "</a>";
+    
 
     $emailContent .= "</div>";
 
