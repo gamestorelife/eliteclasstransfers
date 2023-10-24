@@ -47,11 +47,14 @@ try {
    
 
      $imageUrl = 'https://i.ibb.co/gPdtqNw/image.png';
+     $imagewUrl = 'https://i.ibb.co/Js9J9yJ/Pngtree-whatsapp-icon-social-media-9015284.png';
+    $whatsAppURL = 'https://api.whatsapp.com/send?phone=+306977020552';
+
     
     $emailContent = "<div style='text-align: center; display: inline-table;'>";
     $emailContent .= "<h1 style='color: #333; font-size: 24px;'>Thanks You For Contacting Elite Class Transfers</h1>";
     $emailContent .= "<div>";
-    $emailContent .= "<img src='$imageUrl' alt='Your Image Alt Text' style='max-width: 100%;'>";
+    $emailContent .= "<img src='$imageUrl' alt='mainlogo' style='max-width: 100%;'>";
     $emailContent .= "<p style='font-size: 19px; font-weight: bold;'>Booking Details</p>";
     $emailContent .= "<table style='width: 100%; text-align: left; border: 2px solid black;'>";
     $emailContent .= "<tr><td style='font-size: 16px;'>Pick-Up Location:</td><td style='font-size: 16px;'>$pickupLocation</td></tr>";
@@ -67,8 +70,12 @@ try {
     $emailContent .= "</table>";
     $emailContent .= "</div>";
     $emailContent .= "<p style='font-size: 19px; font-weight: bold;'>We Got Your Message.  And you will be contacted shortly</p>";
-    $emailContent .= "<p style='font-size: 19px; font-weight: bold;'>Good Luck & have fun!</p>";
-    $emailContent .= "<p style='font-size: 19px; font-weight: bold;'>Or you call us Now on +30 6977 020 552</p>";
+    $emailContent .= "<p style='font-size: 19px; font-weight: bold;'>Thank you & have fun!</p>";
+    $emailContent .= "<p style='font-size: 19px; font-weight: bold;'>Or you call us Now on</p>";
+    $emailContent .= "<p style='font-size: 19px; font-weight: bold;'> +30 6977 020 552</p>";
+    $emailContent .= "<a href='$whatsAppURL'>";
+    $emailContent .= "<img src='$imagewUrl' alt="WhatsApp Icon" />";
+    $emailContent .= "</a>";
 
     $emailContent .= "</div>";
 
