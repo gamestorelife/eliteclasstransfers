@@ -34,6 +34,7 @@ $mail = new PHPMailer(true);
 try {
     //Server settings
     $mail->isSMTP();
+    $mail->SMTPDebug = 0;
    $mail->Host = 'smtp.hostinger.com';
    $mail->Port = 465;
    $mail->SMTPAuth = true;
