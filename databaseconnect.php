@@ -21,9 +21,7 @@ $subject = $_POST['subject'];
 // Insert data into database
 $sql = "INSERT INTO users (name, email, subject, message) VALUES ('$name', '$email', '$subject', '$message')";
 if ($conn->query($sql) === TRUE) {
-  echo "<center>
-  <h1>Thank You! For Contacting MykonosBooker. We Will Contact you Shortly.</h1>
-  </center>";
+  echo "<h1>Thank You! For Contacting MykonosBooker. We Will Contact you Shortly.</h1>";
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
