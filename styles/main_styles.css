@@ -2213,7 +2213,7 @@ select{
 }
 .contact_form_subject
 {
-	width: calc((200% - 30px) / 2);
+	width: 100%;
 	margin-top: 11px;
 	font-size: 16px;
 }
@@ -3880,5 +3880,18 @@ table {
 }
 
 
+.intl-tel-input,
+.iti{
+	z-index: 22!important;
+  overflow-x: auto !important;
+  width: 100%;
+}
 
- 
+
+.iti--container {
+	overflow-x: auto !important;
+	background: white;
+	width: auto;
+	z-index: 22!important;
+	
+}

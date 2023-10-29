@@ -47,14 +47,6 @@ window.onload = function() {
 
 
 
-
-
-
-
-
-
-
-
  //location auto complete Function
 
  function setupLocationInput(inputId, listId, locations) {
@@ -399,22 +391,14 @@ const locations1 = [
   
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 $(function() { 
 
 	
+
+	
+
+	  
+
 	
 	$('.menu2').addClass('hiddenm');
 	$('.menu2-hotel').addClass('hiddenm');
@@ -4249,3 +4233,5 @@ window.location.href = `https://bookings.mykonosbooker.com/#/search/${year}~2F${
 		}
 	}
 });
+
+
