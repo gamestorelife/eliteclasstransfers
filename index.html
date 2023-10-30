@@ -47,8 +47,8 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="styles/intlTelInput.css">
-
+ <link rel="stylesheet" type="text/css" href="styles/intlTelInput.css"> 
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css"> -->
 
 
 <!-- Google Tag Manager -->
@@ -369,7 +369,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 											</select>
 										</div>
 											
-										<button class="button search_button" type="submit" >search<span></span><span></span><span><a href="#"></a></span></button>
+										<button class="button search_button" type="submit" >search<span></span><span></span><span></span></button>
 									</form>
 									
 									
@@ -1682,7 +1682,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 											
 										</div>
 	
-										<button class="button search_button" type="submit" >search<span></span><span></span><span><a href="#"></a></span></button>
+										<button class="button search_button" type="submit" >search<span></span><span></span><span></span></button>
 									
 									
 									
@@ -1891,7 +1891,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 														
 														<input type="text" id="contact_form_name" name="name"  class="contact_form_name input_field w-100" placeholder="Name" required="required" data-error="Name is required.">
 														<input type="email" id="contact_form_email" name="email" class="contact_form_email input_field w-100" placeholder="E-mail" required="required" data-error="Email is required.">
-														<input required type="tel" id="phoner"  name="subject" class="contact_form_subject input_field w-100" placeholder="Phone Number" required="required" data-error="Phone is required.">
+														<input required type="tel" id="phoner"  name="subject" class="contact_form_subject input_field w-100" placeholder="Phone Number" data-error="Phone is required.">
 														<button class="button search_button" id="rental-button" type="submit" >
 															Request Quote
 															<span></span><span></span><span></span></button>
@@ -2249,7 +2249,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 														
 														<input type="text" id="contact_form_name" name="name"  class="contact_form_name input_field w-100" placeholder="Name" required="required" data-error="Name is required.">
 														<input type="email" id="contact_form_email" name="email" class="contact_form_email input_field w-100" placeholder="E-mail" required="required" data-error="Email is required.">
-														<input required type="tel" id="contact_form_subject"  name="subject" class="contact_form_subject input_field w-100" placeholder="Phone Number" required="required" data-error="Phone is required.">
+														<input required type="tel" id="contact_form_subject"  name="subject" class="contact_form_subject input_field w-100" placeholder="Phone Number"  data-error="Phone is required.">
 														<button class="button search_button"  type="submit" >
 															Request Quote
 															<span></span><span></span><span></span></button>
@@ -2511,7 +2511,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 														
 														<input type="text" id="contact_form_name" name="name"  class="contact_form_name input_field w-100" placeholder="Name" required="required" data-error="Name is required.">
 														<input type="email" id="contact_form_email" name="email" class="contact_form_email input_field w-100" placeholder="E-mail" required="required" data-error="Email is required.">
-														<input required type="tel" id="contact_form_subject"  name="subject" class="contact_form_subject input_field w-100" placeholder="Phone Number" required="required" data-error="Phone is required.">
+														<input required type="tel" id="contact_form_subject"  name="subject" class="contact_form_subject input_field w-100" placeholder="Phone Number" data-error="Phone is required.">
 														<button class="button search_button"  type="submit" >
 															Request Quote
 															<span></span><span></span><span></span></button>
@@ -2701,7 +2701,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				<tr>
 					<td>
 						<div class="travler-display" >
-							<p id="aladults" value=" "> 1  </p>  Adults,  <p id="alkids" value=" "> 0  </p> Children</p>
+							<p id="aladults" value=" "> 1  </p>
+							Adults,  
+							<p id="alkids" value=" "> 0  
+							 Children</p>
 						</div>
 					</td>
 				  </tr>
@@ -3091,7 +3094,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 											<tr>
 												<td>
 													<div class="travler-display" >
-														<p id="aladults-services" value=" "> 1  </p>  Adults,  <p id="alkids-services" value=" "> 0  </p> Children</p>
+														<p id="aladults-services" value=" "> 1  </p>  Adults,  <p id="alkids-services" value=" "> 0   Children</p>
 													</div>
 												</td>
 											  </tr>
@@ -4106,7 +4109,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<form  id="contact_form" class="contact_form" method="post">
 							<input type="text" id="contact_form_name" name="name"  class="contact_form_name input_field" placeholder="Name" required="required" data-error="Name is required.">
 							<input type="email" id="contact_form_email" name="email" class="contact_form_email input_field" placeholder="E-mail" required="required" data-error="Email is required.">
-							<input required type="tel" id="phone"  name="subject" class="contact_form_subject input_field" placeholder="Phone Number" required="required" data-error="Phone is required.">
+							<input required type="tel" id="phone"  name="subject" class="contact_form_subject input_field" placeholder="Phone Number"  data-error="Phone is required.">
 							<textarea id="contact_form_message" class="text_field contact_form_message" name="message" rows="4" placeholder="Message" required="required" data-error="Please, write us a message."></textarea>
 							<button type="submit" id="form_submit_button" class="form_submit_button button" value="Submit">send message<span></span><span></span><span></span></button>
 						</form>
@@ -4131,13 +4134,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</div>
 							<p class="footer_about_text">Elite Class Transfers! Offers top-of-the-line rental and transportation services that will make your travel experience unforgettable.</p>
 							<ul class="footer_social_list ">
-								<div>
-									<li class="footer_social_item"><a href="https://api.whatsapp.com/send?phone=306977020552"><i class="fa-brands fa-whatsapp fa-xl"></i></a></li>
-								</div>
 								
-								<li class="footer_social_item d-none"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-								<li class="footer_social_item d-none"><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li class="footer_social_item d-none"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+									<li class="footer_social_item"><a href="https://api.whatsapp.com/send?phone=306977020552"><i class="fa-brands fa-whatsapp fa-xl"></i></a></li>
+								
 								
 							</ul>
 						</div>
@@ -4228,7 +4227,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 			</div>
 		</div>
-	</footer>
+	
+			</footer>
 
 	<!-- Copyright -->
 
@@ -4319,7 +4319,6 @@ const dropdownContainerElement = document.getElementById("rental-cars-container"
 
 
    const RentalphoneInput = window.intlTelInput(phoneRentalField, {
-
 	initialCountry: "auto", // Automatically detect the user's country
   	geoIpLookup: function(callback) {
     $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
@@ -4356,7 +4355,6 @@ const myDialog = document.getElementById('my-dialog');
 
 const myDialogR = document.getElementById('rental-dialog');
 const myDialogGT = document.getElementById('transfers-dialog');
-
 const myDialogDr = document.getElementById('hired-dialog');
 
 const form = document.getElementById('contact_form');
@@ -4457,12 +4455,10 @@ closeButtonGT.addEventListener('click', () => {
 	myDialogGT.close();
    });
 
-
    openButtonDri.addEventListener('click', () => {
 	myDialogDr.showModal();
 	autoclosedriver();
    });
-
    closeButtonDR.addEventListener('click', () => {
 	myDialogDr.close();
    });
@@ -4473,13 +4469,11 @@ document.getElementById('toprental').addEventListener('click', function() {
 		  autoclose();
 });
 
-
 document.getElementById('gettrans').addEventListener('click', function() {
 	myDialogGT.showModal();
 	autoclosetranfer();
 
 });
-
 
 document.getElementById('luxurycar').addEventListener('click', function() {
 	myDialogR.showModal();
@@ -4497,36 +4491,37 @@ document.getElementById('hiredriver').addEventListener('click', function() {
 
 //Contact Form
 	
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  myDialog.showModal();
+ form.addEventListener('submit', (event) => {
+   event.preventDefault();
+   myDialog.showModal();
+   
   
-  const formData = new FormData(form);
+   const formData = new FormData(form);
 
-  const xhr1 = new XMLHttpRequest();
-  xhr1.open('POST', 'clientmail.php');
-  xhr1.onload = () => {
-    // handle response from page1.php
+   const xhr1 = new XMLHttpRequest();
+   xhr1.open('POST', 'clientmail.php');
+   xhr1.onload = () => {
+     // handle response from page1.php
+   };
+   xhr1.send(formData);
+
+   const xhr2 = new XMLHttpRequest();
+   xhr2.open('POST', 'phpmailer.php');
+   xhr2.onload = () => {
+     // handle response from page2.php
   };
-  xhr1.send(formData);
+   xhr2.send(formData);
 
-  const xhr2 = new XMLHttpRequest();
-  xhr2.open('POST', 'phpmailer.php');
-  xhr2.onload = () => {
-    // handle response from page2.php
-  };
-  xhr2.send(formData);
+   const xhr3 = new XMLHttpRequest();
+   xhr3.open('POST', 'databaseconnect.php');
+   xhr3.onload = () => {
+     // handle response from page3.php
+   };
+   xhr3.send(formData);
 
-  const xhr3 = new XMLHttpRequest();
-  xhr3.open('POST', 'databaseconnect.php');
-  xhr3.onload = () => {
-    // handle response from page3.php
-  };
-  xhr3.send(formData);
+ reloadPage()
 
-reloadPage()
-
-});
+ });
 
 
 
@@ -4541,8 +4536,20 @@ function reloadPage() {
 	
 }
 	
-//Rental Car Form
 
+
+
+// form.addEventListener('submit', (event) => {
+//  event.preventDefault();
+//  const phoneNumber = phoneInput.getNumber("international");
+//  const formData = new FormData(DRform);
+// for (const [key, value] of formData.entries()) {
+// 	console.log(`${key}: ${value}`);}
+// })
+
+
+
+//Rental Car Form
 Rentform.addEventListener('submit', (event) => {
   event.preventDefault();
   myDialog.showModal();
@@ -4646,12 +4653,6 @@ reloadPage()
 
 
 
-// DRform.addEventListener('submit', (event) => {
-// event.preventDefault();
-// const formData = new FormData(DRform);
-//for (const [key, value] of formData.entries()) {
-//	console.log(`${key}: ${value}`);}
-//})
 
 
 	
