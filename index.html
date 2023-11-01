@@ -4135,7 +4135,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<p class="footer_about_text">Elite Class Transfers! Offers top-of-the-line rental and transportation services that will make your travel experience unforgettable.</p>
 							<ul class="footer_social_list ">
 								
-									<li class="footer_social_item"><a href="https://api.whatsapp.com/send?phone=306977020552"><i class="fa-brands fa-whatsapp fa-xl"></i></a></li>
+									<li class="footer_social_item"><a href="https://api.whatsapp.com/send?phone=306936614936"><i class="fa-brands fa-whatsapp fa-xl"></i></a></li>
 								
 								
 							</ul>
@@ -4532,7 +4532,9 @@ document.getElementById('hiredriver').addEventListener('click', function() {
  form.addEventListener('submit', (event) => {
    event.preventDefault();
    myDialog.showModal();
-   
+     const phoneNumberInput = document.getElementById('phone');
+     const phoneNumber = phoneInput.getNumber();
+     phoneNumberInput.value = phoneNumber;
   
    const formData = new FormData(form);
 
@@ -4590,7 +4592,11 @@ function reloadPage() {
 //Rental Car Form
 Rentform.addEventListener('submit', (event) => {
   event.preventDefault();
-  myDialog.showModal();
+	myDialog.showModal();
+	const phoneRentalField = document.getElementById("phoner");
+	const phoneRentalNumber = RentalphoneInput.getNumber();
+	phoneRentalField.value = phoneRentalNumber;
+
   
   const formData = new FormData(Rentform);
 
@@ -4619,11 +4625,17 @@ reloadPage()
 
 });
 
+
+
+
 // Get Transfers Form
 
 GTform.addEventListener('submit', (event) => {
   event.preventDefault();
-  myDialog.showModal();
+	myDialog.showModal();
+	const phoneTranferField = document.getElementById("transphone");
+	const phoneTransferNumber = TranfersphoneInput.getNumber();
+	phoneTranferField.value = phoneTransferNumber;
   
   const formData = new FormData(GTform);
 
@@ -4657,7 +4669,10 @@ reloadPage()
 
 DRform.addEventListener('submit', (event) => {
   event.preventDefault();
-  myDialog.showModal();
+	myDialog.showModal();
+	const phoneHdriverField = document.getElementById("hdriverphone");
+	const phoneHiredriverNumber = HiredriverphoneInput.getNumber();
+	phoneHdriverField.value = phoneHiredriverNumber;
   
   const formData = new FormData(DRform);
 
