@@ -33,6 +33,19 @@
 
 @media screen and (max-width: 4100px) and (min-width: 992px), (min-width: 4200px)
 {
+	.iti--container {
+		overflow-x: auto !important;
+		background: white;
+		width: auto;
+		z-index: 22!important;
+	}
+	
+	.intl-tel-input,
+	.iti{
+		z-index: 22!important;
+		overflow-x: auto !important;
+		width: 100%;
+	}
 
 
 	
