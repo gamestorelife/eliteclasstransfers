@@ -2493,7 +2493,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 											</div>
 
 											<dialog id="hired-dialog">
-												<div>
+												<div id="hdriver-container">
 													<center>
 														<div class="d-flex justify-content-between">
 															<div class="mb-4">
@@ -2511,7 +2511,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 														
 														<input type="text" id="contact_form_name" name="name"  class="contact_form_name input_field w-100" placeholder="Name" required="required" data-error="Name is required.">
 														<input type="email" id="contact_form_email" name="email" class="contact_form_email input_field w-100" placeholder="E-mail" required="required" data-error="Email is required.">
-														<input required type="tel" id="contact_form_subject"  name="subject" class="contact_form_subject input_field w-100" placeholder="Phone Number" data-error="Phone is required.">
+														<input required type="tel" id="hdriverphone"  name="subject" class="contact_form_subject input_field w-100" placeholder="Phone Number" data-error="Phone is required.">
 														<button class="button search_button"  type="submit" >
 															Request Quote
 															<span></span><span></span><span></span></button>
@@ -4291,11 +4291,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 const phoneInputField = document.getElementById("phone");
 const phoneRentalField = document.getElementById("phoner");
 const phoneTranferField = document.getElementById("transphone");
+const phoneHdriverField = document.getElementById("hdriverphone");
 
 
 
 const dropdownContainerElement = document.getElementById("rental-cars-container");
 const dropdownTranfers = document.getElementById('tranfer-container');
+const dropdownHdriver = document.getElementById('hdriver-container');
 
 
 
@@ -4354,6 +4356,24 @@ const dropdownTranfers = document.getElementById('tranfer-container');
   		formatOnDisplay: true, // Automatically format the input
 		separateDialCode: true,
 		dropdownContainer: dropdownTranfers,
+   });
+
+   const HiredriverphoneInput = window.intlTelInput(phoneHdriverField, {
+	initialCountry: "auto", // Automatically detect the user's country
+  	geoIpLookup: function(callback) {
+    $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+      var countryCode = (resp && resp.country) ? resp.country : "";
+      callback(countryCode);
+   	 });
+ 		 },
+ 		utilsScript:
+       "js/utils.js",
+	   nationalMode: false, // Allow or disallow national phone numbers
+  		autoPlaceholder: "aggressive", // Add a placeholder with the country code
+  		preferredCountries: ["us", "gb"], // Set preferred countries
+  		formatOnDisplay: true, // Automatically format the input
+		separateDialCode: true,
+		dropdownContainer: dropdownHdriver,
    });
 
 	  
