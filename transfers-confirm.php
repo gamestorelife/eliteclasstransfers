@@ -78,7 +78,7 @@ try {
     $emailContent .= "<p style='font-size: 19px; font-weight: bold;'>We Got Your Message.  And you will be contacted shortly</p>";
     $emailContent .= "<p style='font-size: 19px; font-weight: bold;'>Thank you & have fun!</p>";
     $emailContent .= "<p style='font-size: 19px; font-weight: bold;'>Or you call us Now on</p>";
-    $emailContent .= "<p style='font-size: 19px; font-weight: bold;'> +30 6977 020 552</p>";
+    $emailContent .= "<p style='font-size: 19px; font-weight: bold;'>+30 693 661 4936</p>";
 
     $emailContent .= "</div>";
 
