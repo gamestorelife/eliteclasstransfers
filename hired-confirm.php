@@ -45,7 +45,7 @@ try {
     $mail->isHTML(true); // Set email format to HTML
     $mail->Subject = 'Elite Class Transfers Booking Confirmation';
 
-    $imageUrl = 'https://i.ibb.co/gPdtqNw/image.png';
+    $imageUrl = 'https://i.ibb.co/98QjqxL/email-tranfers-logo.png';
     
     $emailContent = "<div style='text-align: center; display: inline-table;'>";
     $emailContent .= "<h1 style='color: #333; font-size: 24px;'>Thanks You For Contacting Elite Class Transfers</h1>";

@@ -46,7 +46,7 @@ try {
     $mail->Subject = 'Booking Confirmation';
    
 
-     $imageUrl = 'https://i.ibb.co/gPdtqNw/image.png';
+     $imageUrl = 'https://i.ibb.co/98QjqxL/email-tranfers-logo.png';
      
     
     $emailContent = "<div style='text-align: center; display: inline-table;'>";
