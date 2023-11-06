@@ -76,10 +76,8 @@ try {
     $emailContent .= "</table>";
     $emailContent .= "</div>";
     $emailContent .= "<p style='font-size: 19px; font-weight: bold;'>We Got Your Message.  And you will be contacted shortly</p>";
-    $emailContent .= "<p style='font-size: 19px; font-weight: bold;'>Thank you & have fun!</p>";
-    $emailContent .= "<p style='font-size: 19px; font-weight: bold;'>Or you call us Now on</p>";
-    $emailContent .= "<p style='font-size: 19px; font-weight: bold;'>+30 693 661 4936</p>";
-
+    $emailContent .= "<p style='font-size: 19px; font-weight: bold;'>If you require immediate assistance, please call us at +30 693 661 4936</p>";
+    $emailContent .= "<p style='font-size: 19px; font-weight: bold;'>Thank you and enjoy!</p>";
     $emailContent .= "</div>";
 
     $mail->Body = $emailContent;
