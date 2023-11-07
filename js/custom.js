@@ -4251,13 +4251,11 @@ checkbox.addEventListener('change', function() {
 
 function checkboxCheckedFunction() {
     // Your code to run when the checkbox is checked
-    console.log('Checkbox is checked');
 	$('#locationReturn').show(200);
-}
+};
 
 // Define the function to run when the checkbox is unchecked
 function checkboxUncheckedFunction() {
     // Your code to run when the checkbox is unchecked
-    console.log('Checkbox is unchecked');
 	$('#locationReturn').hide(200);
-}
+};
