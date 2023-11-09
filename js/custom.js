@@ -4236,6 +4236,8 @@ window.location.href = `https://bookings.mykonosbooker.com/#/search/${year}~2F${
 
 
 
+
+//check box functions
 const checkbox = document.getElementById('vehicle1');
 
 checkbox.addEventListener('change', function() {
@@ -4258,4 +4260,67 @@ function checkboxCheckedFunction() {
 function checkboxUncheckedFunction() {
     // Your code to run when the checkbox is unchecked
 	$('#locationReturn').hide(200);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Auto Close function
+
+
+function autoclose () {
+	const dialogBox = document.getElementById('rental-dialog');
+
+	window.addEventListener('click', (event) => {
+  if (event.target === dialogBox) {
+    dialogBox.close();
+	document.body.classList.remove("no-scroll");
+  }
+})
+};
+
+function autoclosetranfer () {
+	const dialogBox = document.getElementById('transfers-dialog');
+
+	window.addEventListener('click', (event) => {
+  if (event.target === dialogBox) {
+    dialogBox.close();
+	document.body.classList.remove("no-scroll");
+  }
+})
+};
+
+function autoclosedriver () {
+	const dialogBox = document.getElementById('hired-dialog');
+
+	window.addEventListener('click', (event) => {
+  if (event.target === dialogBox) {
+    dialogBox.close();
+	document.body.classList.remove("no-scroll");
+  }
+})
+};
+
+
+function autocloseCarOffer () {
+	const dialogBox = document.getElementById('caroffer-dialog');
+
+	window.addEventListener('click', (event) => {
+  if (event.target === dialogBox) {
+    dialogBox.close();
+	document.body.classList.remove("no-scroll");
+  }
+})
 };

@@ -76,6 +76,15 @@ body
 	color: #a5a5a5;
 	
 }
+
+
+.no-scroll {
+	overflow: hidden;
+  }
+
+
+
+
 div
 {
 	display: block;

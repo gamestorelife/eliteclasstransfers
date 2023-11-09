@@ -3778,6 +3778,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 									</div>
 								</div>
 							</div>
+							
 
 							<!-- Testimonial Item -->
 							<div class="owl-item">
@@ -4091,12 +4092,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
+	  <dialog id="caroffer-dialog">
+		<form >
+			<div id="cars-offer-container">
+				<center>
+					<div class="d-flex justify-content-between">
+						<div class="mb-4">
+							<p>Last Step…</p>
+						</div>
+						
+						<div class="escape-area mb-4">
+							<button id="caroffer-escape-but" class="scape-button" type="button" style="background: #f0ffff00; border: none;">
+								<i class="fa-solid fa-circle-xmark" style="color: white;"></i>
+							</button>
+						</div>
+					</div>
+					
+					<input autofocus type="text" id="contact_form_name" name="name"  class="contact_form_name input_field w-100" placeholder="Name" required="required" data-error="Name is required.">
+					<input type="email" id="contact_form_email" name="email" class="contact_form_email input_field w-100" placeholder="E-mail" required="required" data-error="Email is required.">
+					<input required type="tel" id="carofferphone"  name="subject" class="contact_form_subject input_field w-100" placeholder="Phone Number" data-error="Phone is required.">
+					<div id="cars-offer-container" class="w-100"></div>
+					<button class="button search_button" id="rental-button" type="submit" >
+						Request Quote
+						<span></span><span></span><span></span></button>
+				</center>
+			</div>
+		</form>
+		
+	</dialog>
 
 
 
 
 
-	<div class="contact">
+	<div class="contact" id="mainmessage">
 		<div class="contact_background" ></div>
 
 		<div class="container">
@@ -4296,12 +4325,15 @@ const phoneInputField = document.getElementById("phone");
 const phoneRentalField = document.getElementById("phoner");
 const phoneTranferField = document.getElementById("transphone");
 const phoneHdriverField = document.getElementById("hdriverphone");
+const phoneCarOfferField = document.getElementById("carofferphone");
 
 
 
 const dropdownContainerElement = document.getElementById("rental-cars-container");
+const CarofferContainerElement = document.getElementById("cars-offer-container");
 const dropdownTranfers = document.getElementById('tranfer-container');
 const dropdownHdriver = document.getElementById('hdriver-container');
+const MainContact = document.getElementById('mainmessage');
 
 
 
@@ -4321,7 +4353,7 @@ const dropdownHdriver = document.getElementById('hdriver-container');
   		autoPlaceholder: "aggressive", // Add a placeholder with the country code
   		formatOnDisplay: true, // Automatically format the input
 		separateDialCode: true,
-		dropdownContainer: document.body,
+		dropdownContainer: MainContact,
    });
 
 
@@ -4380,6 +4412,25 @@ const dropdownHdriver = document.getElementById('hdriver-container');
 		dropdownContainer: dropdownHdriver,
    });
 
+
+   const CarOfferphoneInput = window.intlTelInput(phoneCarOfferField, {
+	initialCountry: "auto", // Automatically detect the user's country
+  	geoIpLookup: function(callback) {
+    $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+      var countryCode = (resp && resp.country) ? resp.country : "";
+      callback(countryCode);
+   	 });
+ 		 },
+ 		utilsScript:
+       "js/utils.js",
+	   nationalMode: false, // Allow or disallow national phone numbers
+  		autoPlaceholder: "aggressive", // Add a placeholder with the country code
+  		preferredCountries: ["us", "gb"], // Set preferred countries
+  		formatOnDisplay: true, // Automatically format the input
+		separateDialCode: true,
+		dropdownContainer: CarofferContainerElement,
+   });
+
 	  
 
 const openButton = document.getElementById('form_submit_button');
@@ -4391,6 +4442,7 @@ const openButtonDri = document.getElementById('hired-button');
 const closeButtonR = document.getElementById('escape-but');
 const closeButtonGT = document.getElementById('gt-escape-but');
 const closeButtonDR = document.getElementById('dr-escape-but');
+const closeButtonCR = document.getElementById('caroffer-escape-but');
 const myDialog = document.getElementById('my-dialog');
 
 
@@ -4398,6 +4450,7 @@ const myDialog = document.getElementById('my-dialog');
 const myDialogR = document.getElementById('rental-dialog');
 const myDialogGT = document.getElementById('transfers-dialog');
 const myDialogDr = document.getElementById('hired-dialog');
+const OfferDialog = document.getElementById('caroffer-dialog');
 
 const form = document.getElementById('contact_form');
 const Rentform = document.getElementById('rental-form');
@@ -4415,49 +4468,21 @@ const DRform = document.getElementById('hired-form');
 
 
 
-function autoclose () {
-	const dialogBox = document.getElementById('rental-dialog');
-
-	window.addEventListener('click', (event) => {
-  if (event.target === dialogBox) {
-    dialogBox.close();
-  }
-})
-};
-
-function autoclosetranfer () {
-	const dialogBox = document.getElementById('transfers-dialog');
-
-	window.addEventListener('click', (event) => {
-  if (event.target === dialogBox) {
-    dialogBox.close();
-  }
-})
-};
-
-function autoclosedriver () {
-	const dialogBox = document.getElementById('hired-dialog');
-
-	window.addEventListener('click', (event) => {
-  if (event.target === dialogBox) {
-    dialogBox.close();
-  }
-})
-};
 
 
 openButtonR.addEventListener('click', () => {
       myDialogR.showModal();
-	  autoclose();  
+	  autoclose(); 
+	  document.body.classList.add("no-scroll"); 
 	  
 });
 
 
 
     testiMonial1.addEventListener('click', () => {
-        myDialogR.showModal();
-        autoclose();
-
+        OfferDialog.showModal();
+        autocloseCarOffer();
+		document.body.classList.add("no-scroll");
 	});
     testiMonial2.addEventListener('click', () => {
         myDialogR.showModal();
@@ -4486,44 +4511,57 @@ openButtonR.addEventListener('click', () => {
     });
 closeButtonR.addEventListener('click', () => {
       myDialogR.close();
+	  document.body.classList.remove("no-scroll");
    });
 
  openButtonGT.addEventListener('click', () => {
 	myDialogGT.showModal();
+	document.body.classList.add("no-scroll");
 	autoclosetranfer();
    });
 
 closeButtonGT.addEventListener('click', () => {
 	myDialogGT.close();
+	document.body.classList.remove("no-scroll");
    });
 
    openButtonDri.addEventListener('click', () => {
 	myDialogDr.showModal();
+	document.body.classList.add("no-scroll");
 	autoclosedriver();
    });
    closeButtonDR.addEventListener('click', () => {
 	myDialogDr.close();
+	document.body.classList.remove("no-scroll");
+   });
+   closeButtonCR.addEventListener('click', () => {
+	OfferDialog.close();
+	document.body.classList.remove("no-scroll");
    });
 
 
 document.getElementById('toprental').addEventListener('click', function() {
  		 myDialogR.showModal();
+		  document.body.classList.add("no-scroll");
 		  autoclose();
 });
 
 document.getElementById('gettrans').addEventListener('click', function() {
 	myDialogGT.showModal();
+	document.body.classList.add("no-scroll");
 	autoclosetranfer();
 
 });
 
 document.getElementById('luxurycar').addEventListener('click', function() {
 	myDialogR.showModal();
+	document.body.classList.add("no-scroll");
 		  autoclose();
 });
 
 document.getElementById('hiredriver').addEventListener('click', function() {
 	myDialogDr.showModal();
+	document.body.classList.add("no-scroll");
 	autoclosedriver();
 });
 
