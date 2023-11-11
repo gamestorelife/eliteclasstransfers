@@ -4093,7 +4093,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 	  <dialog id="caroffer-dialog">
-		<form >
+		<form method="post" id="bcaroffer">
 			<div id="cars-offer-container">
 				<center>
 					<div class="d-flex justify-content-between">
@@ -4112,7 +4112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					<input type="email" id="contact_form_email" name="email" class="contact_form_email input_field w-100" placeholder="E-mail" required="required" data-error="Email is required.">
 					<input required type="tel" id="carofferphone"  name="subject" class="contact_form_subject input_field w-100" placeholder="Phone Number" data-error="Phone is required.">
 					<div id="cars-offer-container" class="w-100"></div>
-					<button class="button search_button" id="rental-button" type="submit" >
+					<button class="button search_button" id="caroffer" type="submit" >
 						Request Quote
 						<span></span><span></span><span></span></button>
 				</center>
@@ -4137,7 +4137,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				</div>
 				<div class="col-lg-7">
 					<div class="contact_form_container">
-						<div class="contact_title">get in touch</div>
+							<div class="contact_title">get in touch</div>
 						<form  id="contact_form" class="contact_form" method="post">
 							<input type="text" id="contact_form_name" name="name"  class="contact_form_name input_field" placeholder="Name" required="required" data-error="Name is required.">
 							<input type="email" id="contact_form_email" name="email" class="contact_form_email input_field" placeholder="E-mail" required="required" data-error="Email is required.">
@@ -4340,12 +4340,7 @@ const MainContact = document.getElementById('mainmessage');
 
    const phoneInput = window.intlTelInput(phoneInputField, {
 	initialCountry: "auto", // Automatically detect the user's country
-  	geoIpLookup: function(callback) {
-    $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-      var countryCode = (resp && resp.country) ? resp.country : "";
-      callback(countryCode);
-   	 });
- 		 },
+  	
 		placeholderNumberType: 'MOBILE',
  		utilsScript:
        "js/utils.js",
@@ -4359,13 +4354,7 @@ const MainContact = document.getElementById('mainmessage');
 
 
    const RentalphoneInput = window.intlTelInput(phoneRentalField, {
-	initialCountry: "auto", // Automatically detect the user's country
-  	geoIpLookup: function(callback) {
-    $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-      var countryCode = (resp && resp.country) ? resp.country : "";
-      callback(countryCode);
-   	 });
- 		 },
+	
  		utilsScript:
        "js/utils.js",
 	   nationalMode: false, // Allow or disallow national phone numbers
@@ -4377,13 +4366,7 @@ const MainContact = document.getElementById('mainmessage');
    });
 
    const TranfersphoneInput = window.intlTelInput(phoneTranferField, {
-	initialCountry: "auto", // Automatically detect the user's country
-  	geoIpLookup: function(callback) {
-    $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-      var countryCode = (resp && resp.country) ? resp.country : "";
-      callback(countryCode);
-   	 });
- 		 },
+	
  		utilsScript:
        "js/utils.js",
 	   nationalMode: false, // Allow or disallow national phone numbers
@@ -4395,13 +4378,7 @@ const MainContact = document.getElementById('mainmessage');
    });
 
    const HiredriverphoneInput = window.intlTelInput(phoneHdriverField, {
-	initialCountry: "auto", // Automatically detect the user's country
-  	geoIpLookup: function(callback) {
-    $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-      var countryCode = (resp && resp.country) ? resp.country : "";
-      callback(countryCode);
-   	 });
- 		 },
+	
  		utilsScript:
        "js/utils.js",
 	   nationalMode: false, // Allow or disallow national phone numbers
@@ -4414,13 +4391,7 @@ const MainContact = document.getElementById('mainmessage');
 
 
    const CarOfferphoneInput = window.intlTelInput(phoneCarOfferField, {
-	initialCountry: "auto", // Automatically detect the user's country
-  	geoIpLookup: function(callback) {
-    $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-      var countryCode = (resp && resp.country) ? resp.country : "";
-      callback(countryCode);
-   	 });
- 		 },
+	
  		utilsScript:
        "js/utils.js",
 	   nationalMode: false, // Allow or disallow national phone numbers
@@ -4456,6 +4427,9 @@ const form = document.getElementById('contact_form');
 const Rentform = document.getElementById('rental-form');
 const GTform = document.getElementById('GT-form');
 const DRform = document.getElementById('hired-form');
+
+const CarOffer = document.getElementById('bcaroffer');
+
 
 	const testiMonial1 = document.getElementById('testimonial1');
 	const testiMonial2 = document.getElementById('testimonial2');
@@ -4567,7 +4541,15 @@ document.getElementById('hiredriver').addEventListener('click', function() {
 
 
 
-
+function reloadPage() {
+	setTimeout(() => {
+    // Enable the button after the delay
+	window.location.reload(true);
+    // Run the function
+   // runAfterDelay();
+  }, 9000);
+	
+}
 
 //Contact Form
 	
@@ -4600,45 +4582,39 @@ document.getElementById('hiredriver').addEventListener('click', function() {
      // handle response from page3.php
    };
    xhr3.send(formData);
-
- reloadPage()
+   reloadPage();
 
  });
 
 
 
 
-function reloadPage() {
-	setTimeout(() => {
-    // Enable the button after the delay
-	window.location.reload(true);
-    // Run the function
-   // runAfterDelay();
-  }, 9000);
-	
-}
+
 	
 
 
+//Form testing
 
-// form.addEventListener('submit', (event) => {
-//  event.preventDefault();
-//  const phoneNumber = phoneInput.getNumber("international");
-//  const formData = new FormData(DRform);
-// for (const [key, value] of formData.entries()) {
-// 	console.log(`${key}: ${value}`);}
-// })
+//  CarOffer.addEventListener('submit', (event) => {
+//   event.preventDefault();
+//   const phoneCarOfferField = document.getElementById("carofferphone");
+// 	const phoneRentalNumber = CarOfferphoneInput.getNumber();
+// 	phoneCarOfferField.value = phoneRentalNumber;
+
+//   const formData = new FormData(CarOffer);
+//  for (const [key, value] of formData.entries()) {
+//  	console.log(`${key}: ${value}`);}
+//  })
 
 
 
 //Rental Car Form
 Rentform.addEventListener('submit', (event) => {
   event.preventDefault();
-	myDialog.showModal();
 	const phoneRentalField = document.getElementById("phoner");
 	const phoneRentalNumber = RentalphoneInput.getNumber();
 	phoneRentalField.value = phoneRentalNumber;
-
+	myDialog.showModal();
   
   const formData = new FormData(Rentform);
 
@@ -4666,8 +4642,6 @@ Rentform.addEventListener('submit', (event) => {
 reloadPage()
 
 });
-
-
 
 
 // Get Transfers Form
@@ -4744,24 +4718,46 @@ reloadPage()
 });
 
 
-
-
-
-
-
-
 	
-	</script>
+CarOffer.addEventListener('submit', (event) => {
+   event.preventDefault();
+   myDialog.showModal();
+   const phoneCarOfferField = document.getElementById("carofferphone");
+	const phoneRentalNumber = CarOfferphoneInput.getNumber();
+	phoneCarOfferField.value = phoneRentalNumber;
+  
+   const formData = new FormData(CarOffer);
+
+   const xhr1 = new XMLHttpRequest();
+   xhr1.open('POST', 'carofferwemail.php');
+   xhr1.onload = () => {
+     // handle response from page1.php
+   };
+   xhr1.send(formData);
+
+   const xhr2 = new XMLHttpRequest();
+   xhr2.open('POST', 'phpmailer.php');
+   xhr2.onload = () => {
+     // handle response from page2.php
+  };
+   xhr2.send(formData);
+
+   const xhr3 = new XMLHttpRequest();
+   xhr3.open('POST', 'databaseconnect.php');
+   xhr3.onload = () => {
+     // handle response from page3.php
+   };
+   xhr3.send(formData);
+   reloadPage();
+
+ });
 
 
-	
-
-
+</script>
 	<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJCF8N8M"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->	
 
 </body>
-
 </html>
