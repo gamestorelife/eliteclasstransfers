@@ -4324,3 +4324,16 @@ function autocloseCarOffer () {
   }
 })
 };
+
+
+
+function autocloseRangeRover () {
+	const dialogBox = document.getElementById('rangerover-dialog');
+
+	window.addEventListener('click', (event) => {
+  if (event.target === dialogBox) {
+    dialogBox.close();
+	document.body.classList.remove("no-scroll");
+  }
+})
+};

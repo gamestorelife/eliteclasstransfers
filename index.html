@@ -4091,10 +4091,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	  
 
 
-
+<!-- Best Car Offer -->
 	  <dialog id="caroffer-dialog">
-		<form method="post" id="bcaroffer">
-			<div id="cars-offer-container">
+			<form method="post" id="bcaroffer">
+				<div id="cars-offer-container">
 				<center>
 					<div class="d-flex justify-content-between">
 						<div class="mb-4">
@@ -4111,21 +4111,50 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					<input autofocus type="text" id="contact_form_name" name="name"  class="contact_form_name input_field w-100" placeholder="Name" required="required" data-error="Name is required.">
 					<input type="email" id="contact_form_email" name="email" class="contact_form_email input_field w-100" placeholder="E-mail" required="required" data-error="Email is required.">
 					<input required type="tel" id="carofferphone"  name="subject" class="contact_form_subject input_field w-100" placeholder="Phone Number" data-error="Phone is required.">
-					<div id="cars-offer-container" class="w-100"></div>
+					<div id="" class="w-100"></div>
 					<button class="button search_button" id="caroffer" type="submit" >
 						Request Quote
 						<span></span><span></span><span></span></button>
 				</center>
+				</div>
+			</form>
+	  </dialog>
+
+
+<!-- Range Rover -->
+	  <dialog id="rangerover-dialog">
+		<form method="post" id="rangeroverform">
+			<div id="rangerover-container">
+			<center>
+				<div class="d-flex justify-content-between">
+					<div class="mb-4">
+						<p>Last Step…</p>
+					</div>
+					
+					<div class="escape-area mb-4">
+						<button id="rangerover-escape-but" class="scape-button" type="button" style="background: #f0ffff00; border: none;">
+							<i class="fa-solid fa-circle-xmark" style="color: white;"></i>
+						</button>
+					</div>
+				</div>
+				
+				<input autofocus type="text" id="contact_form_name" name="name"  class="contact_form_name input_field w-100" placeholder="Name" required="required" data-error="Name is required.">
+				<input type="email" id="contact_form_email" name="email" class="contact_form_email input_field w-100" placeholder="E-mail" required="required" data-error="Email is required.">
+				<input required type="tel" id="rangeroverphone"  name="subject" class="contact_form_subject input_field w-100" placeholder="Phone Number" data-error="Phone is required.">
+				<div  class="w-100"></div>
+				<button class="button search_button" id="caroffer" type="submit" >
+					Request Quote
+					<span></span><span></span><span></span></button>
+			</center>
 			</div>
 		</form>
-		
-	</dialog>
+  </dialog>
 
 
 
 
 
-	<div class="contact" id="mainmessage">
+	<div class="contact" >
 		<div class="contact_background" ></div>
 
 		<div class="container">
@@ -4136,7 +4165,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					</div>
 				</div>
 				<div class="col-lg-7">
-					<div class="contact_form_container">
+					<div class="contact_form_container" id="mainmessage">
 							<div class="contact_title">get in touch</div>
 						<form  id="contact_form" class="contact_form" method="post">
 							<input type="text" id="contact_form_name" name="name"  class="contact_form_name input_field" placeholder="Name" required="required" data-error="Name is required.">
@@ -4326,11 +4355,13 @@ const phoneRentalField = document.getElementById("phoner");
 const phoneTranferField = document.getElementById("transphone");
 const phoneHdriverField = document.getElementById("hdriverphone");
 const phoneCarOfferField = document.getElementById("carofferphone");
+const phoneRangeRoverField = document.getElementById("rangeroverphone");
 
 
 
 const dropdownContainerElement = document.getElementById("rental-cars-container");
 const CarofferContainerElement = document.getElementById("cars-offer-container");
+const RangeRoverContainerElement = document.getElementById("rangerover-container");
 const dropdownTranfers = document.getElementById('tranfer-container');
 const dropdownHdriver = document.getElementById('hdriver-container');
 const MainContact = document.getElementById('mainmessage');
@@ -4402,11 +4433,22 @@ const MainContact = document.getElementById('mainmessage');
 		dropdownContainer: CarofferContainerElement,
    });
 
+//Range Rover
+   const RangeRoverphoneInput = window.intlTelInput(phoneRangeRoverField, {
+	utilsScript:
+  "js/utils.js",
+  nationalMode: false, // Allow or disallow national phone numbers
+	 autoPlaceholder: "aggressive", // Add a placeholder with the country code
+	 preferredCountries: ["us", "gb"], // Set preferred countries
+	 formatOnDisplay: true, // Automatically format the input
+   separateDialCode: true,
+   dropdownContainer: RangeRoverContainerElement,
+});
+
 	  
 
 const openButton = document.getElementById('form_submit_button');
 const openButtonR = document.getElementById('rental-button');
-
 const openButtonGT = document.getElementById('gt-button');
 const openButtonDri = document.getElementById('hired-button');
 
@@ -4414,6 +4456,8 @@ const closeButtonR = document.getElementById('escape-but');
 const closeButtonGT = document.getElementById('gt-escape-but');
 const closeButtonDR = document.getElementById('dr-escape-but');
 const closeButtonCR = document.getElementById('caroffer-escape-but');
+const closeButtonRangeRover = document.getElementById('rangerover-escape-but');
+
 const myDialog = document.getElementById('my-dialog');
 
 
@@ -4422,6 +4466,7 @@ const myDialogR = document.getElementById('rental-dialog');
 const myDialogGT = document.getElementById('transfers-dialog');
 const myDialogDr = document.getElementById('hired-dialog');
 const OfferDialog = document.getElementById('caroffer-dialog');
+const RangeRoverDialog = document.getElementById('rangerover-dialog');
 
 const form = document.getElementById('contact_form');
 const Rentform = document.getElementById('rental-form');
@@ -4429,6 +4474,7 @@ const GTform = document.getElementById('GT-form');
 const DRform = document.getElementById('hired-form');
 
 const CarOffer = document.getElementById('bcaroffer');
+const RangeRover = document.getElementById('rangeroverform');
 
 
 	const testiMonial1 = document.getElementById('testimonial1');
@@ -4459,8 +4505,9 @@ openButtonR.addEventListener('click', () => {
 		document.body.classList.add("no-scroll");
 	});
     testiMonial2.addEventListener('click', () => {
-        myDialogR.showModal();
-        autoclose();
+        RangeRoverDialog.showModal();
+		document.body.classList.add("no-scroll");
+		autocloseRangeRover();
 
 	});
     testiMonial3.addEventListener('click', () => {
@@ -4510,6 +4557,10 @@ closeButtonGT.addEventListener('click', () => {
    });
    closeButtonCR.addEventListener('click', () => {
 	OfferDialog.close();
+	document.body.classList.remove("no-scroll");
+   });
+   closeButtonRangeRover.addEventListener('click', () => {
+	RangeRoverDialog.close();
 	document.body.classList.remove("no-scroll");
    });
 
@@ -4593,18 +4644,6 @@ function reloadPage() {
 	
 
 
-//Form testing
-
-//  CarOffer.addEventListener('submit', (event) => {
-//   event.preventDefault();
-//   const phoneCarOfferField = document.getElementById("carofferphone");
-// 	const phoneRentalNumber = CarOfferphoneInput.getNumber();
-// 	phoneCarOfferField.value = phoneRentalNumber;
-
-//   const formData = new FormData(CarOffer);
-//  for (const [key, value] of formData.entries()) {
-//  	console.log(`${key}: ${value}`);}
-//  })
 
 
 
@@ -4718,7 +4757,7 @@ reloadPage()
 });
 
 
-	
+// Best Car Offer Form	
 CarOffer.addEventListener('submit', (event) => {
    event.preventDefault();
    myDialog.showModal();
@@ -4751,6 +4790,69 @@ CarOffer.addEventListener('submit', (event) => {
    reloadPage();
 
  });
+
+// Range Rover Form
+
+
+ RangeRover.addEventListener('submit', (event) => {
+    event.preventDefault();
+    myDialog.showModal();
+    const phoneRangeRoverField = document.getElementById("rangeroverphone");
+ 	const phoneRangeroverNumber = RangeRoverphoneInput.getNumber();
+ 	phoneRangeRoverField.value = phoneRangeroverNumber;
+  
+    const formData = new FormData(RangeRover);
+
+    const xhr1 = new XMLHttpRequest();
+   xhr1.open('POST', 'rangeroverwemail.php');
+    xhr1.onload = () => {
+      // handle response from page1.php
+    };
+    xhr1.send(formData);
+
+    const xhr2 = new XMLHttpRequest();
+    xhr2.open('POST', 'phpmailer.php');
+   xhr2.onload = () => {
+      // handle response from page2.php
+   };
+    xhr2.send(formData);
+
+    const xhr3 = new XMLHttpRequest();
+   xhr3.open('POST', 'databaseconnect.php');
+    xhr3.onload = () => {
+      // handle response from page3.php
+    };
+    xhr3.send(formData);
+   reloadPage();
+
+  });
+
+
+
+
+
+
+
+
+
+
+
+ //Form testing
+
+//  RangeRover.addEventListener('submit', (event) => {
+//    event.preventDefault();
+//    const phoneRangeRoverField = document.getElementById("rangeroverphone");
+//  	const phoneRangeroverNumber = RangeRoverphoneInput.getNumber();
+//  	phoneRangeRoverField.value = phoneRangeroverNumber;
+
+//   const formData = new FormData(RangeRover);
+//   for (const [key, value] of formData.entries()) {
+//   	console.log(`${key}: ${value}`);}
+//   });
+
+
+
+
 
 
 </script>

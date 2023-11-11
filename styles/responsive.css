@@ -38,6 +38,8 @@
 		background: white;
 		width: auto;
 		z-index: 22!important;
+		top: 0 !important;
+		position: relative !important;
 	}
 	
 	.intl-tel-input,
