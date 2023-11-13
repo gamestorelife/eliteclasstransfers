@@ -4337,3 +4337,15 @@ function autocloseRangeRover () {
   }
 })
 };
+
+//JeepRubiconDialog
+function autocloseJeepRubico () {
+	const dialogBox = document.getElementById('jeeprubicon-dialog');
+
+	window.addEventListener('click', (event) => {
+  if (event.target === dialogBox) {
+    dialogBox.close();
+	document.body.classList.remove("no-scroll");
+  }
+})
+};

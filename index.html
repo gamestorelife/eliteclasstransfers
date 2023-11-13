@@ -4150,6 +4150,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		</form>
   </dialog>
 
+  <!-- Jeep Rubicon -->
+  <dialog id="jeeprubicon-dialog">
+	<form method="post" id="jeeprubiconform">
+		<div id="jeeprubicon-container">
+		<center>
+			<div class="d-flex justify-content-between">
+				<div class="mb-4">
+					<p>Last Step…</p>
+				</div>
+				
+				<div class="escape-area mb-4">
+					<button id="jeeprubicon-escape-but" class="scape-button" type="button" style="background: #f0ffff00; border: none;">
+						<i class="fa-solid fa-circle-xmark" style="color: white;"></i>
+					</button>
+				</div>
+			</div>
+			
+			<input autofocus type="text" id="contact_form_name" name="name"  class="contact_form_name input_field w-100" placeholder="Name" required="required" data-error="Name is required.">
+			<input type="email" id="contact_form_email" name="email" class="contact_form_email input_field w-100" placeholder="E-mail" required="required" data-error="Email is required.">
+			<input required type="tel" id="jeeprubiconphone"  name="subject" class="contact_form_subject input_field w-100" placeholder="Phone Number" data-error="Phone is required.">
+			<div  class="w-100"></div>
+			<button class="button search_button" id="caroffer" type="submit" >
+				Request Quote
+				<span></span><span></span><span></span></button>
+		</center>
+		</div>
+	</form>
+</dialog>
 
 
 
@@ -4356,12 +4384,13 @@ const phoneTranferField = document.getElementById("transphone");
 const phoneHdriverField = document.getElementById("hdriverphone");
 const phoneCarOfferField = document.getElementById("carofferphone");
 const phoneRangeRoverField = document.getElementById("rangeroverphone");
-
+const phoneJeepRubiconField = document.getElementById("jeeprubiconphone");
 
 
 const dropdownContainerElement = document.getElementById("rental-cars-container");
 const CarofferContainerElement = document.getElementById("cars-offer-container");
 const RangeRoverContainerElement = document.getElementById("rangerover-container");
+const JeepRubiconContainerElement = document.getElementById("jeeprubicon-container");
 const dropdownTranfers = document.getElementById('tranfer-container');
 const dropdownHdriver = document.getElementById('hdriver-container');
 const MainContact = document.getElementById('mainmessage');
@@ -4444,6 +4473,17 @@ const MainContact = document.getElementById('mainmessage');
    separateDialCode: true,
    dropdownContainer: RangeRoverContainerElement,
 });
+//Jeep Rubicon
+const JeepRubiconphoneInput = window.intlTelInput(phoneJeepRubiconField, {
+	utilsScript:
+  "js/utils.js",
+  nationalMode: false, // Allow or disallow national phone numbers
+	 autoPlaceholder: "aggressive", // Add a placeholder with the country code
+	 preferredCountries: ["us", "gb"], // Set preferred countries
+	 formatOnDisplay: true, // Automatically format the input
+   separateDialCode: true,
+   dropdownContainer: JeepRubiconContainerElement,
+});
 
 	  
 
@@ -4457,6 +4497,7 @@ const closeButtonGT = document.getElementById('gt-escape-but');
 const closeButtonDR = document.getElementById('dr-escape-but');
 const closeButtonCR = document.getElementById('caroffer-escape-but');
 const closeButtonRangeRover = document.getElementById('rangerover-escape-but');
+const closeButtonJeepRubicon = document.getElementById('jeeprubicon-escape-but');
 
 const myDialog = document.getElementById('my-dialog');
 
@@ -4467,6 +4508,7 @@ const myDialogGT = document.getElementById('transfers-dialog');
 const myDialogDr = document.getElementById('hired-dialog');
 const OfferDialog = document.getElementById('caroffer-dialog');
 const RangeRoverDialog = document.getElementById('rangerover-dialog');
+const JeepRubiconDialog = document.getElementById('jeeprubicon-dialog')
 
 const form = document.getElementById('contact_form');
 const Rentform = document.getElementById('rental-form');
@@ -4475,6 +4517,7 @@ const DRform = document.getElementById('hired-form');
 
 const CarOffer = document.getElementById('bcaroffer');
 const RangeRover = document.getElementById('rangeroverform');
+const JeepRubicon = document.getElementById('jeeprubiconform');
 
 
 	const testiMonial1 = document.getElementById('testimonial1');
@@ -4511,8 +4554,9 @@ openButtonR.addEventListener('click', () => {
 
 	});
     testiMonial3.addEventListener('click', () => {
-        myDialogR.showModal();
-        autoclose();
+        JeepRubiconDialog.showModal();
+		document.body.classList.add("no-scroll");
+        autocloseJeepRubico();
 
 	});
     testiMonial4.addEventListener('click', () => {
@@ -4563,6 +4607,11 @@ closeButtonGT.addEventListener('click', () => {
 	RangeRoverDialog.close();
 	document.body.classList.remove("no-scroll");
    });
+   closeButtonJeepRubicon.addEventListener('click', () => {
+	JeepRubiconDialog.close();
+	document.body.classList.remove("no-scroll");
+   });
+
 
 
 document.getElementById('toprental').addEventListener('click', function() {
@@ -4827,7 +4876,41 @@ CarOffer.addEventListener('submit', (event) => {
 
   });
 
+// Jeep Rubicon Form
 
+
+JeepRubicon.addEventListener('submit', (event) => {
+    event.preventDefault();
+    myDialog.showModal();
+	const phoneJeepRubiconField = document.getElementById("jeeprubiconphone");
+  	const phoneJeepRubiconNumber = JeepRubiconphoneInput.getNumber();
+  	phoneJeepRubiconField.value = phoneJeepRubiconNumber;
+  
+    const formData = new FormData(JeepRubicon);
+
+    const xhr1 = new XMLHttpRequest();
+   xhr1.open('POST', 'jeeprubiconwemail.php');
+    xhr1.onload = () => {
+      // handle response from page1.php
+    };
+    xhr1.send(formData);
+
+    const xhr2 = new XMLHttpRequest();
+    xhr2.open('POST', 'phpmailer.php');
+   xhr2.onload = () => {
+      // handle response from page2.php
+   };
+    xhr2.send(formData);
+
+    const xhr3 = new XMLHttpRequest();
+   xhr3.open('POST', 'databaseconnect.php');
+    xhr3.onload = () => {
+      // handle response from page3.php
+    };
+    xhr3.send(formData);
+   reloadPage();
+
+  });
 
 
 
@@ -4839,16 +4922,16 @@ CarOffer.addEventListener('submit', (event) => {
 
  //Form testing
 
-//  RangeRover.addEventListener('submit', (event) => {
-//    event.preventDefault();
-//    const phoneRangeRoverField = document.getElementById("rangeroverphone");
-//  	const phoneRangeroverNumber = RangeRoverphoneInput.getNumber();
-//  	phoneRangeRoverField.value = phoneRangeroverNumber;
+//   JeepRubicon.addEventListener('submit', (event) => {
+//     event.preventDefault();
+//     const phoneJeepRubiconField = document.getElementById("jeeprubiconphone");
+//   	const phoneJeepRubiconNumber = JeepRubiconphoneInput.getNumber();
+//   	phoneJeepRubiconField.value = phoneJeepRubiconNumber;
 
-//   const formData = new FormData(RangeRover);
-//   for (const [key, value] of formData.entries()) {
-//   	console.log(`${key}: ${value}`);}
-//   });
+//    const formData = new FormData(JeepRubicon);
+//    for (const [key, value] of formData.entries()) {
+//    	console.log(`${key}: ${value}`);}
+//    });
 
 
 
