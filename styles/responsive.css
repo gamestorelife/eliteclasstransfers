@@ -38,8 +38,9 @@
 		background: white;
 		width: auto;
 		z-index: 22!important;
-		top: 0 !important;
-		position: relative !important;
+		top: 30px !important;
+   		 bottom: 30px !important;
+		left: 10.625px !important;
 	}
 	
 	.intl-tel-input,
@@ -1126,7 +1127,7 @@ width: 100%;
 		display: flex;
 
 	}
-
+	
 	
 }
 
@@ -1136,6 +1137,7 @@ width: 100%;
 
 @media only screen and (max-width: 1210px)
 {
+	
 	.cta_slider_prev
 	{
 		left: 15px;

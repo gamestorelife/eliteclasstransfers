@@ -1464,30 +1464,7 @@ select{
 		border-style: solid ;
 		color: rgba(255, 255, 255, 0.961);
 		width: 100%;
-	/* -webkit-appearance:none;
-    -moz-appearance:none;
-    -ms-appearance:none;
-    -o-appearance:none;
-    appearance:none;
-	background-image: url(../images/dropdown.png);
-	background-position: center right;
-	background-repeat: no-repeat;
-	border: solid 1px #FFFFFF;
-	margin: 0;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	cursor: pointer; */
 	
-	/* background-image: url(../images/dropdown.png);
-	background-position: center right;
-	background-repeat: no-repeat;
-	border: solid 1px #FFFFFF;
-	margin: 0;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	cursor: pointer; */
 }
 .dropdown_item_select::-ms-expand
 {
@@ -3901,7 +3878,7 @@ table {
 .iti--container {
 	overflow-x: auto !important;
 	
-	background: white;
+	background: white ;
 	width: auto;
 	z-index: 22!important;
 	
