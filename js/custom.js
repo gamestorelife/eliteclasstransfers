@@ -4373,3 +4373,15 @@ function autocloseJeepWrangler () {
   }
 })
 };
+
+//FIAT 500 Dialog
+function autocloseFiat () {
+	const dialogBox = document.getElementById('fiat-dialog');
+
+	window.addEventListener('click', (event) => {
+  if (event.target === dialogBox) {
+    dialogBox.close();
+	document.body.classList.remove("no-scroll");
+  }
+})
+};
