@@ -4349,3 +4349,15 @@ function autocloseJeepRubico () {
   }
 })
 };
+
+//Marcedes Dialog
+function autocloseMarcedes () {
+	const dialogBox = document.getElementById('marcedes-dialog');
+
+	window.addEventListener('click', (event) => {
+  if (event.target === dialogBox) {
+    dialogBox.close();
+	document.body.classList.remove("no-scroll");
+  }
+})
+};
