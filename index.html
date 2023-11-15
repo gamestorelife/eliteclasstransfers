@@ -4208,7 +4208,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	</form>
 </dialog>
 
-
+ <!-- Jeep Wrangler -->
+ <dialog id="jeepwrangler-dialog">
+	<form method="post" id="jeepwranglerform">
+		<div id="jeepwrangler-container">
+		<center>
+			<div class="d-flex justify-content-between">
+				<div class="mb-4">
+					<p>Last Step…</p>
+				</div>
+				
+				<div class="escape-area mb-4">
+					<button id="jeepwrangler-escape-but" class="scape-button" type="button" style="background: #f0ffff00; border: none;">
+						<i class="fa-solid fa-circle-xmark" style="color: white;"></i>
+					</button>
+				</div>
+			</div>
+			
+			<input autofocus type="text" id="contact_form_name" name="name"  class="contact_form_name input_field w-100" placeholder="Name" required="required" data-error="Name is required.">
+			<input type="email" id="contact_form_email" name="email" class="contact_form_email input_field w-100" placeholder="E-mail" required="required" data-error="Email is required.">
+			<input required type="tel" id="jeepwranglerphone"  name="subject" class="contact_form_subject input_field w-100" placeholder="Phone Number" data-error="Phone is required.">
+			<div  class="w-100"></div>
+			<button class="button search_button" id="" type="submit" >
+				Request Quote
+				<span></span><span></span><span></span></button>
+		</center>
+		</div>
+	</form>
+</dialog>
 
 
 	<div class="contact" >
@@ -4415,6 +4442,7 @@ const phoneCarOfferField = document.getElementById("carofferphone");
 const phoneRangeRoverField = document.getElementById("rangeroverphone");
 const phoneJeepRubiconField = document.getElementById("jeeprubiconphone");
 const phoneMarcedesField = document.getElementById("marcedesphone");
+const phoneJeepWranglerField = document.getElementById("jeepwranglerphone");
 
 
 const dropdownContainerElement = document.getElementById("rental-cars-container");
@@ -4425,6 +4453,7 @@ const dropdownTranfers = document.getElementById('tranfer-container');
 const dropdownHdriver = document.getElementById('hdriver-container');
 const MainContact = document.getElementById('mainmessage');
 const MarcedesContainerElement = document.getElementById("marcedes-container");
+const JeepWranglerContainerElement = document.getElementById("jeepwrangler-container");
 
 
 
@@ -4524,7 +4553,17 @@ const MarcedesphoneInput = window.intlTelInput(phoneMarcedesField, {
    separateDialCode: true,
    dropdownContainer: MarcedesContainerElement,
 });
-
+//Jeep Wrangler
+const JeepWranglerphoneInput = window.intlTelInput(phoneJeepWranglerField, {
+	utilsScript:
+  "js/utils.js",
+  nationalMode: false, // Allow or disallow national phone numbers
+	 autoPlaceholder: "aggressive", // Add a placeholder with the country code
+	 preferredCountries: ["us", "gb"], // Set preferred countries
+	 formatOnDisplay: true, // Automatically format the input
+   separateDialCode: true,
+   dropdownContainer: JeepWranglerContainerElement,
+});
 	  
 
 const openButton = document.getElementById('form_submit_button');
@@ -4539,6 +4578,7 @@ const closeButtonCR = document.getElementById('caroffer-escape-but');
 const closeButtonRangeRover = document.getElementById('rangerover-escape-but');
 const closeButtonJeepRubicon = document.getElementById('jeeprubicon-escape-but');
 const closeButtonMarcedes = document.getElementById('marcedes-escape-but');
+const closeButtonJeepWrangler = document.getElementById('jeepwrangler-escape-but');
 
 const myDialog = document.getElementById('my-dialog');
 
@@ -4549,6 +4589,7 @@ const OfferDialog = document.getElementById('caroffer-dialog');
 const RangeRoverDialog = document.getElementById('rangerover-dialog');
 const JeepRubiconDialog = document.getElementById('jeeprubicon-dialog');
 const MarcedesDialog = document.getElementById('marcedes-dialog');
+const JeepWranglerDialog = document.getElementById('jeepwrangler-dialog');
 
 const form = document.getElementById('contact_form');
 const Rentform = document.getElementById('rental-form');
@@ -4559,6 +4600,7 @@ const CarOffer = document.getElementById('bcaroffer');
 const RangeRover = document.getElementById('rangeroverform');
 const JeepRubicon = document.getElementById('jeeprubiconform');
 const Marcedes = document.getElementById('marcedesform');
+const JeepWrangler = document.getElementById('jeepwranglerform');
 
 
 	const testiMonial1 = document.getElementById('testimonial1');
@@ -4606,8 +4648,9 @@ openButtonR.addEventListener('click', () => {
 
 	});
     testiMonial5.addEventListener('click', () => {
-        myDialogR.showModal();
-        autoclose();
+        JeepWranglerDialog.showModal();
+		document.body.classList.add("no-scroll");
+        autocloseJeepWrangler();
 
     });
     testiMonial6.addEventListener('click', () => {
@@ -4654,6 +4697,10 @@ closeButtonGT.addEventListener('click', () => {
    });
    closeButtonMarcedes.addEventListener('click', () => {
 	MarcedesDialog.close();
+	document.body.classList.remove("no-scroll");
+   });
+   closeButtonJeepWrangler.addEventListener('click', () => {
+	JeepWranglerDialog.close();
 	document.body.classList.remove("no-scroll");
    });
 
@@ -4982,7 +5029,40 @@ Marcedes.addEventListener('submit', (event) => {
 
   });
 
+  // Jeep Wrangler Form
 
+  JeepWrangler.addEventListener('submit', (event) => {
+    event.preventDefault();
+    myDialog.showModal();
+		const phoneJeepWranglerField = document.getElementById("jeepwranglerphone");
+    	const phoneJeepWranglerNumber = JeepWranglerphoneInput.getNumber();
+    	phoneJeepWranglerField.value = phoneJeepWranglerNumber;
+  
+    const formData = new FormData(JeepWrangler);
+
+    const xhr1 = new XMLHttpRequest();
+   xhr1.open('POST', 'jeepwranglerwemail.php');
+    xhr1.onload = () => {
+      // handle response from page1.php
+    };
+    xhr1.send(formData);
+
+    const xhr2 = new XMLHttpRequest();
+    xhr2.open('POST', 'phpmailer.php');
+   xhr2.onload = () => {
+      // handle response from page2.php
+   };
+    xhr2.send(formData);
+
+    const xhr3 = new XMLHttpRequest();
+   xhr3.open('POST', 'databaseconnect.php');
+    xhr3.onload = () => {
+      // handle response from page3.php
+    };
+    xhr3.send(formData);
+   reloadPage();
+
+  });
 
 
 
@@ -4992,16 +5072,16 @@ Marcedes.addEventListener('submit', (event) => {
 
  //Form testing
 
-//    Marcedes.addEventListener('submit', (event) => {
-//      event.preventDefault();
-//      const phoneMarcedesField = document.getElementById("marcedesphone");
-//    	const phoneMarcedesNumber = MarcedesphoneInput.getNumber();
-//    	phoneMarcedesField.value = phoneMarcedesNumber;
+    // JeepWrangler.addEventListener('submit', (event) => {
+    //   event.preventDefault();
+    //   const phoneJeepWranglerField = document.getElementById("jeepwranglerphone");
+    // 	const phoneJeepWranglerNumber = JeepWranglerphoneInput.getNumber();
+    // 	phoneJeepWranglerField.value = phoneJeepWranglerNumber;
 
-//     const formData = new FormData(Marcedes);
-//     for (const [key, value] of formData.entries()) {
-//     	console.log(`${key}: ${value}`);}
-//     });
+    //  const formData = new FormData(JeepWrangler);
+    //  for (const [key, value] of formData.entries()) {
+    //  	console.log(`${key}: ${value}`);}
+    //  });
 
 
 

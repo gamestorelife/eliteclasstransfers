@@ -4361,3 +4361,15 @@ function autocloseMarcedes () {
   }
 })
 };
+
+//Jeep Wrangler Dialog
+function autocloseJeepWrangler () {
+	const dialogBox = document.getElementById('jeepwrangler-dialog');
+
+	window.addEventListener('click', (event) => {
+  if (event.target === dialogBox) {
+    dialogBox.close();
+	document.body.classList.remove("no-scroll");
+  }
+})
+};
