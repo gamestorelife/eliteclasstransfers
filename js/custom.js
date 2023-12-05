@@ -3550,7 +3550,7 @@ function hero1Services () {
 	  });
 
 	  $('#tranfer-action').click(function(){
-		$('.dash-book-trans').show(500);
+		$('.dash-book-trans').show();
 		$(".dash-renal-car").hide();
 		$('.dash-hire-driv').hide();
 

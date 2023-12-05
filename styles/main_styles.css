@@ -3884,3 +3884,12 @@ table {
 	
 	
 }
+
+#iconic-fram.mat-body, .mat-body-1, .mat-typography {
+	margin-top: -160px !important;
+}
+
+
+._ngcontent-bol-c108 {
+	background-color: green;
+}
