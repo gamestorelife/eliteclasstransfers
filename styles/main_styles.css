@@ -3893,3 +3893,9 @@ table {
 ._ngcontent-bol-c108 {
 	background-color: green;
 }
+
+.mat-stepper-horizontal, .mat-stepper-vertical, .mat-tab-group, .mat-tab-label, .mat-tab-link {
+    font-family: acumin-pro,Helvetica Neue,sans-serif;
+    background: linear-gradient(180deg, #857244 40%, #502c2c 100%);
+    color: white;
+}
