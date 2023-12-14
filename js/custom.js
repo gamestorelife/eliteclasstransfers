@@ -3551,6 +3551,7 @@ function hero1Services () {
 
 	  $('#tranfer-action').click(function(){
 		$('.dash-book-trans').show();
+
 		$(".dash-renal-car").hide();
 		$('.dash-hire-driv').hide();
 
@@ -4301,6 +4302,19 @@ function autoclosetranfer () {
   }
 })
 };
+
+function autoclosefram () {
+	const dialogBox = document.getElementById('transfers-dialog-guest');
+
+	window.addEventListener('click', (event) => {
+  if (event.target === dialogBox) {
+    dialogBox.close();
+	document.body.classList.remove("no-scroll");
+  }
+})
+};
+
+
 
 function autoclosedriver () {
 	const dialogBox = document.getElementById('hired-dialog');

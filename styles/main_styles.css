@@ -3885,17 +3885,17 @@ table {
 	
 }
 
-#iconic-fram.mat-body, .mat-body-1, .mat-typography {
-	margin-top: -160px !important;
+#transfers-dialog-guest {
+	
+	padding-left: 10px;
+	padding-right: 10px;
+	overflow: auto;
+	width: auto !important;
 }
 
-
-._ngcontent-bol-c108 {
-	background-color: green;
-}
-
-.mat-stepper-horizontal, .mat-stepper-vertical, .mat-tab-group, .mat-tab-label, .mat-tab-link {
-    font-family: acumin-pro,Helvetica Neue,sans-serif;
-    background: linear-gradient(180deg, #857244 40%, #502c2c 100%);
-    color: white;
+#iconic-fram {
+	
+    margin-left: -48px;
+    margin-right: -49px;
+    scale: 0.8;
 }
