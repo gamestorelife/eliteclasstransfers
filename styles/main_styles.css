@@ -2319,6 +2319,7 @@ select{
 	font-size: 14px;
 	font-weight: 600;
 	color: #FFFFFF;
+	padding-top: 30px;
 }
 .footer_social_item
 {
@@ -2512,13 +2513,13 @@ select{
 .copyright_content
 {
 	height: 52px;
-	width: 190%;
+	width: 210%;
 }
 .copyright_content div
 {
 	font-size: 12px;
 	font-weight: 600;
-	color: #858585;
+	color: #afa8a8;
 }
 .footer_nav_container
 {
