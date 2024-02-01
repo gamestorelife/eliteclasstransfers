@@ -3857,7 +3857,7 @@ table {
   }
 
   .escape-area {
-	
+	z-index: 250;
     position: relative;
     margin-top: -20px;
 	display: flex;
@@ -3897,8 +3897,14 @@ table {
 
 #iconic-fram {
 	
-    margin-left: -48px;
+    margin-left: -60px;
     margin-right: -49px;
-    scale: 0.8;
 	padding-top: 50px;
+}
+
+@supports (-webkit-overflow-scrolling: touch) and (color: var(--main-color)) {
+    /* Your iOS-specific styles here */
+	.frame-fix {
+		scale: 0.9;
+	}
 }
