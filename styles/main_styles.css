@@ -3450,13 +3450,14 @@ center {
   border-radius: 30px !important;
 }
 
-#iconic-fram {
-  padding-top: 75px;
-}
-
 @supports (-webkit-overflow-scrolling: touch) and (color: var(--main-color)) {
   /* Your iOS-specific styles here */
   .frame-fix {
     scale: 0.9;
   }
+}
+
+#tranfer-container {
+  margin-bottom: -150px;
+  z-index: 77;
 }
