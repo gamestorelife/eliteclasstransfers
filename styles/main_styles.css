@@ -3451,7 +3451,7 @@ center {
 }
 
 #iconic-fram {
-  padding-top: 50px;
+  padding-top: 75px;
 }
 
 @supports (-webkit-overflow-scrolling: touch) and (color: var(--main-color)) {
