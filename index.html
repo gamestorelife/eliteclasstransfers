@@ -31,11 +31,11 @@
       type="text/css"
       href="styles/bootstrap4/bootstrap.min.css"
     />
-    <link
+    <!-- <link
       href="plugins/font-awesome-4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
       type="text/css"
-    />
+    /> -->
     <link rel="stylesheet" href="./styles/line.css" type="text/css" />
 
     <meta
@@ -79,7 +79,7 @@
     <script src="dist/zebra_datepicker.min.js"></script>
     <script src="js/jquery-3.5.0.min.js"></script>
 
-    <!-- <link rel="stylesheet" type="text/css" href="styles/intlTelInput.css"> -->
+    <link rel="stylesheet" type="text/css" href="styles/intlTelInput.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css"
@@ -99,6 +99,12 @@
       })(window, document, "script", "dataLayer", "GTM-NJCF8N8M");
     </script>
     <!-- End Google Tag Manager -->
+
+    <link rel="stylesheet" href="styles/v6.5.1/css/all-1.css" />
+    <link rel="stylesheet" href="styles/v6.5.1/css/sharp-thin.css" />
+    <link rel="stylesheet" href="styles/v6.5.1/css/sharp-solid.css" />
+    <link rel="stylesheet" href="styles/v6.5.1/css/sharp-regular.css" />
+    <link rel="stylesheet" href="styles/v6.5.1/css/sharp-light.css" />
   </head>
 
   <body>
@@ -222,6 +228,44 @@
             <li class="menu_item"><a href="blog.html">news</a></li>
             <li class="menu_item"><a href="contact.html">contact</a></li>
           </ul>
+        </div>
+      </div>
+
+      <!--Book A Tranfere Ifram-->
+
+      <div class="menu-iconic trans_500" id="iconic-menu">
+        <div class="menu_close_container_iconic" id="close-iconic">
+          <i
+            class="fa-light fa-circle-xmark"
+            style="color: #3d85e3; font-size: 35px"
+          ></i>
+        </div>
+        <div id="tranfer-container">
+          <div
+            class="d-flex justify-content-between"
+            style="margin-bottom: -150px; z-index: 77"
+          >
+            <div class="mb-4"></div>
+
+            <div class="escape-area mb-4 d-none">
+              <button
+                id="fram-escape-but"
+                class="scape-button"
+                type="button"
+                style="background: #f0ffff00; border: none"
+              >
+                <i class="fa-solid fa-circle-xmark" style="color: #3d85e3"></i>
+              </button>
+            </div>
+          </div>
+          <div class="d-flex" id="iconic-fram">
+            <iframe
+              style="width: 100%; height: 100vh; border: none; display: flex"
+              src="https://transfer.iconicguest.com/booking_engine/#/850579d608"
+              title="description"
+            >
+            </iframe>
+          </div>
         </div>
       </div>
 
@@ -2422,83 +2466,7 @@
                     class="search_panel_content d-flex flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start"
                   >
                     <div class="dash-book-trans">
-                      <dialog id="transfers-dialog-guest">
-                        <div id="tranfer-container">
-                          <center>
-                            <div
-                              class="d-flex justify-content-between"
-                              style="margin-bottom: -150px; z-index: 77"
-                            >
-                              <div class="mb-4">
-                                <p class="d-none">Last Step…</p>
-                              </div>
-
-                              <div class="escape-area mb-4">
-                                <button
-                                  id="fram-escape-but"
-                                  class="scape-button"
-                                  type="button"
-                                  style="background: #f0ffff00; border: none"
-                                >
-                                  <i
-                                    class="fa-solid fa-circle-xmark"
-                                    style="color: #3d85e3"
-                                  ></i>
-                                </button>
-                              </div>
-                            </div>
-                            <div class="d-flex" id="iconic-fram">
-                              <iframe
-                                style="
-                                  width: 100%;
-                                  height: 100vh;
-                                  border: none;
-                                  display: flex;
-                                "
-                                src="https://transfer.iconicguest.com/booking_engine/#/850579d608"
-                                title="description"
-                              >
-                              </iframe>
-                            </div>
-
-                            <input
-                              autofocus
-                              type="text"
-                              id="contact_form_name"
-                              name="name"
-                              class="contact_form_name input_field w-100 d-none"
-                              placeholder="Name"
-                              required="required"
-                              data-error="Name is required."
-                            />
-                            <input
-                              type="email"
-                              id="contact_form_email"
-                              name="email"
-                              class="contact_form_email input_field w-100 d-none"
-                              placeholder="E-mail"
-                              required="required"
-                              data-error="Email is required."
-                            />
-                            <input
-                              required
-                              type="tel"
-                              id="transphone"
-                              name="subject"
-                              class="contact_form_subject input_field w-100 d-none"
-                              placeholder="Phone Number"
-                              data-error="Phone is required."
-                            />
-                            <button
-                              class="button search_button d-none"
-                              type="submit"
-                            >
-                              Request Quote
-                              <span></span><span></span><span></span>
-                            </button>
-                          </center>
-                        </div>
-                      </dialog>
+                      <dialog id="transfers-dialog-guest"></dialog>
 
                       <div class="d-none">
                         <div
@@ -2887,36 +2855,6 @@
                           Book Now<span></span><span></span><span></span>
                         </button>
                       </div>
-
-                      <!-- <dialog id="transfers-dialog">
-													<div id="tranfer-container">
-														<center>
-															<div class="d-flex justify-content-between">
-																<div class="mb-4">
-																	<p>Last Step…</p>
-																</div>
-																
-																<div class="escape-area mb-4">
-																	<button id="gt-escape-but" class="scape-button" type="button" style="background: #f0ffff00; border: none;">
-																		<i class="fa-solid fa-circle-xmark" style="color: white;"></i>
-																	</button>
-																	
-																</div>
-																
-															</div>
-															
-															<input autofocus type="text" id="contact_form_name" name="name"  class="contact_form_name input_field w-100" placeholder="Name" required="required" data-error="Name is required.">
-															<input type="email" id="contact_form_email" name="email" class="contact_form_email input_field w-100" placeholder="E-mail" required="required" data-error="Email is required.">
-															<input required type="tel" id="transphone"  name="subject" class="contact_form_subject input_field w-100" placeholder="Phone Number"  data-error="Phone is required.">
-															<button class="button search_button"  type="submit" >
-																Request Quote
-																<span></span><span></span><span></span></button>
-														</center>
-														
-													</div>
-													
-													
-												</dialog> -->
                     </div>
                   </form>
 
@@ -6071,21 +6009,21 @@
         autoclosetranfer();
       });
 
-      openButtonFrame.addEventListener("click", () => {
-        myDialogFram.showModal();
-        document.body.classList.add("no-scroll");
-        autoclosefram();
-      });
+      // openButtonFrame.addEventListener("click", () => {
+      //   myDialogFram.showModal();
+      //   document.body.classList.add("no-scroll");
+      //   autoclosefram();
+      // });
 
       // closeButtonGT.addEventListener('click', () => {
       // 	myDialogGT.close();
       // 	document.body.classList.remove("no-scroll");
       //    });
 
-      closeButtonFram.addEventListener("click", () => {
-        myDialogFram.close();
-        document.body.classList.remove("no-scroll");
-      });
+      // closeButtonFram.addEventListener("click", () => {
+      //   myDialogFram.close();
+      //   document.body.classList.remove("no-scroll");
+      // });
 
       openButtonDri.addEventListener("click", () => {
         myDialogDr.showModal();
