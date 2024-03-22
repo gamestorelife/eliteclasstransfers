@@ -4870,3 +4870,540 @@ function autocloseFiat() {
     }
   });
 }
+
+document.write('<script src="js/intlTelInput.js"></script>');
+document.write('<script src="js/intlTelInput.min.js"></script>');
+
+const openButton = document.getElementById("form_submit_button");
+const openButtonR = document.getElementById("rental-button");
+const openButtonGT = document.getElementById("gt-button");
+
+const openButtonFrame = document.getElementById("tranfer-action");
+
+const openButtonDri = document.getElementById("hired-button");
+
+const closeButtonR = document.getElementById("escape-but");
+const closeButtonGT = document.getElementById("gt-escape-but");
+const closeButtonFram = document.getElementById("fram-escape-but");
+const closeButtonDR = document.getElementById("dr-escape-but");
+const closeButtonCR = document.getElementById("caroffer-escape-but");
+const closeButtonRangeRover = document.getElementById("rangerover-escape-but");
+const closeButtonJeepRubicon = document.getElementById(
+  "jeeprubicon-escape-but"
+);
+const closeButtonMarcedes = document.getElementById("marcedes-escape-but");
+const closeButtonJeepWrangler = document.getElementById(
+  "jeepwrangler-escape-but"
+);
+const closeButtonFiat = document.getElementById("fiat-escape-but");
+
+const myDialog = document.getElementById("my-dialog");
+
+const myDialogR = document.getElementById("rental-dialog");
+const myDialogGT = document.getElementById("transfers-dialog");
+const myDialogFram = document.getElementById("transfers-dialog-guest");
+
+const myDialogDr = document.getElementById("hired-dialog");
+const OfferDialog = document.getElementById("caroffer-dialog");
+const RangeRoverDialog = document.getElementById("rangerover-dialog");
+const JeepRubiconDialog = document.getElementById("jeeprubicon-dialog");
+const MarcedesDialog = document.getElementById("marcedes-dialog");
+const JeepWranglerDialog = document.getElementById("jeepwrangler-dialog");
+const FiatDialog = document.getElementById("fiat-dialog");
+
+const form = document.getElementById("contact_form");
+const Rentform = document.getElementById("rental-form");
+const GTform = document.getElementById("GT-form");
+const DRform = document.getElementById("hired-form");
+
+const CarOffer = document.getElementById("bcaroffer");
+const RangeRover = document.getElementById("rangeroverform");
+const JeepRubicon = document.getElementById("jeeprubiconform");
+const Marcedes = document.getElementById("marcedesform");
+const JeepWrangler = document.getElementById("jeepwranglerform");
+const FIAT = document.getElementById("fiatform");
+
+const testiMonial1 = document.getElementById("testimonial1");
+const testiMonial2 = document.getElementById("testimonial2");
+const testiMonial3 = document.getElementById("testimonial3");
+const testiMonial4 = document.getElementById("testimonial4");
+const testiMonial5 = document.getElementById("testimonial5");
+const testiMonial6 = document.getElementById("testimonial6");
+
+openButtonR.addEventListener("click", () => {
+  myDialogR.showModal();
+  autoclose();
+  document.body.classList.add("no-scroll");
+});
+
+testiMonial1.addEventListener("click", () => {
+  OfferDialog.showModal();
+  autocloseCarOffer();
+  document.body.classList.add("no-scroll");
+});
+testiMonial2.addEventListener("click", () => {
+  RangeRoverDialog.showModal();
+  document.body.classList.add("no-scroll");
+  autocloseRangeRover();
+});
+testiMonial3.addEventListener("click", () => {
+  JeepRubiconDialog.showModal();
+  document.body.classList.add("no-scroll");
+  autocloseMarcedes();
+});
+testiMonial4.addEventListener("click", () => {
+  MarcedesDialog.showModal();
+  document.body.classList.add("no-scroll");
+  autocloseMarcedes();
+});
+testiMonial5.addEventListener("click", () => {
+  JeepWranglerDialog.showModal();
+  document.body.classList.add("no-scroll");
+  autocloseJeepWrangler();
+});
+testiMonial6.addEventListener("click", () => {
+  FiatDialog.showModal();
+  document.body.classList.add("no-scroll");
+  autocloseFiat();
+});
+
+closeButtonR.addEventListener("click", () => {
+  myDialogR.close();
+  document.body.classList.remove("no-scroll");
+});
+
+// openButtonGT.addEventListener("click", () => {
+//   console.log("looking good");
+//   document.body.classList.add("no-scroll");
+//   autoclosetranfer();
+// });
+
+// openButtonFrame.addEventListener("click", () => {
+//   myDialogFram.showModal();
+//   document.body.classList.add("no-scroll");
+//   autoclosefram();
+// });
+
+// closeButtonGT.addEventListener("click", () => {
+//   myDialogGT.close();
+//   document.body.classList.remove("no-scroll");
+// });
+
+closeButtonFram.addEventListener("click", () => {
+  myDialogFram.close();
+  document.body.classList.remove("no-scroll");
+});
+
+openButtonDri.addEventListener("click", () => {
+  myDialogDr.showModal();
+  document.body.classList.add("no-scroll");
+  autoclosedriver();
+});
+closeButtonDR.addEventListener("click", () => {
+  myDialogDr.close();
+  document.body.classList.remove("no-scroll");
+});
+closeButtonCR.addEventListener("click", () => {
+  OfferDialog.close();
+  document.body.classList.remove("no-scroll");
+});
+closeButtonRangeRover.addEventListener("click", () => {
+  RangeRoverDialog.close();
+  document.body.classList.remove("no-scroll");
+});
+closeButtonJeepRubicon.addEventListener("click", () => {
+  JeepRubiconDialog.close();
+  document.body.classList.remove("no-scroll");
+});
+closeButtonMarcedes.addEventListener("click", () => {
+  MarcedesDialog.close();
+  document.body.classList.remove("no-scroll");
+});
+closeButtonJeepWrangler.addEventListener("click", () => {
+  JeepWranglerDialog.close();
+  document.body.classList.remove("no-scroll");
+});
+closeButtonFiat.addEventListener("click", () => {
+  FiatDialog.close();
+  document.body.classList.remove("no-scroll");
+});
+
+document.getElementById("toprental").addEventListener("click", function () {
+  console.log("We got clicked");
+  RangeRoverDialog.showModal();
+  document.body.classList.add("no-scroll");
+  autocloseRangeRover();
+});
+
+document.getElementById("gettrans").addEventListener("click", function () {
+  console.log("We got clicked");
+  $(".dash-book-trans").show();
+  $("#iconic-menu").show();
+  $(".dash-renal-car").hide();
+  $(".dash-hire-driv").hide();
+
+  // myDialogGT.showModal();
+  // document.body.classList.add("no-scroll");
+  // autoclosetranfer();
+});
+
+document.getElementById("luxurycar").addEventListener("click", function () {
+  RangeRoverDialog.showModal();
+  document.body.classList.add("no-scroll");
+  autocloseRangeRover();
+});
+
+document.getElementById("hiredriver").addEventListener("click", function () {
+  myDialogDr.showModal();
+  document.body.classList.add("no-scroll");
+  autoclosedriver();
+});
+
+function reloadPage() {
+  setTimeout(() => {
+    // Enable the button after the delay
+    window.location.reload(true);
+    // Run the function
+    // runAfterDelay();
+  }, 9000);
+}
+
+//Contact Form
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  myDialog.showModal();
+  const phoneNumberInput = document.getElementById("phone");
+  const phoneNumber = phoneInput.getNumber();
+  phoneNumberInput.value = phoneNumber;
+
+  const formData = new FormData(form);
+
+  const xhr1 = new XMLHttpRequest();
+  xhr1.open("POST", "clientmail.php");
+  xhr1.onload = () => {
+    // handle response from page1.php
+  };
+  xhr1.send(formData);
+
+  const xhr2 = new XMLHttpRequest();
+  xhr2.open("POST", "phpmailer.php");
+  xhr2.onload = () => {
+    // handle response from page2.php
+  };
+  xhr2.send(formData);
+
+  const xhr3 = new XMLHttpRequest();
+  xhr3.open("POST", "databaseconnect.php");
+  xhr3.onload = () => {
+    // handle response from page3.php
+  };
+  xhr3.send(formData);
+  reloadPage();
+});
+
+//Rental Car Form
+Rentform.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const phoneRentalField = document.getElementById("phoner");
+  const phoneRentalNumber = RentalphoneInput.getNumber();
+  phoneRentalField.value = phoneRentalNumber;
+  myDialog.showModal();
+
+  const formData = new FormData(Rentform);
+
+  const xhr1 = new XMLHttpRequest();
+  xhr1.open("POST", "rental-confirm.php");
+  xhr1.onload = () => {
+    // handle response from page1.php
+  };
+  xhr1.send(formData);
+
+  const xhr2 = new XMLHttpRequest();
+  xhr2.open("POST", "send-email.php");
+  xhr2.onload = () => {
+    // handle response from page2.php
+  };
+  xhr2.send(formData);
+
+  const xhr3 = new XMLHttpRequest();
+  xhr3.open("POST", "databaseconnect.php");
+  xhr3.onload = () => {
+    // handle response from page3.php
+  };
+  xhr3.send(formData);
+
+  reloadPage();
+});
+
+// Get Transfers Form
+
+GTform.addEventListener("submit", (event) => {
+  event.preventDefault();
+  myDialog.showModal();
+  const phoneTranferField = document.getElementById("transphone");
+  const phoneTransferNumber = TranfersphoneInput.getNumber();
+  phoneTranferField.value = phoneTransferNumber;
+
+  const formData = new FormData(GTform);
+
+  const xhr1 = new XMLHttpRequest();
+  xhr1.open("POST", "transfers-confirm.php");
+  xhr1.onload = () => {
+    // handle response from page1.php
+  };
+  xhr1.send(formData);
+
+  const xhr2 = new XMLHttpRequest();
+  xhr2.open("POST", "gettranfers-email.php");
+  xhr2.onload = () => {
+    // handle response from page2.php
+  };
+  xhr2.send(formData);
+
+  const xhr3 = new XMLHttpRequest();
+  xhr3.open("POST", "databaseconnect.php");
+  xhr3.onload = () => {
+    // handle response from page3.php
+  };
+  xhr3.send(formData);
+
+  reloadPage();
+});
+
+// Hire a driver Form
+
+DRform.addEventListener("submit", (event) => {
+  event.preventDefault();
+  myDialog.showModal();
+  const phoneHdriverField = document.getElementById("hdriverphone");
+  const phoneHiredriverNumber = HiredriverphoneInput.getNumber();
+  phoneHdriverField.value = phoneHiredriverNumber;
+
+  const formData = new FormData(DRform);
+
+  const xhr1 = new XMLHttpRequest();
+  xhr1.open("POST", "hired-confirm.php");
+  xhr1.onload = () => {
+    // handle response from page1.php
+  };
+  xhr1.send(formData);
+
+  const xhr2 = new XMLHttpRequest();
+  xhr2.open("POST", "hiredriver-email.php");
+  xhr2.onload = () => {
+    // handle response from page2.php
+  };
+  xhr2.send(formData);
+
+  const xhr3 = new XMLHttpRequest();
+  xhr3.open("POST", "databaseconnect.php");
+  xhr3.onload = () => {
+    // handle response from page3.php
+  };
+  xhr3.send(formData);
+
+  reloadPage();
+});
+
+// Best Car Offer Form
+CarOffer.addEventListener("submit", (event) => {
+  event.preventDefault();
+  myDialog.showModal();
+  const phoneCarOfferField = document.getElementById("carofferphone");
+  const phoneRentalNumber = CarOfferphoneInput.getNumber();
+  phoneCarOfferField.value = phoneRentalNumber;
+
+  const formData = new FormData(CarOffer);
+
+  const xhr1 = new XMLHttpRequest();
+  xhr1.open("POST", "carofferwemail.php");
+  xhr1.onload = () => {
+    // handle response from page1.php
+  };
+  xhr1.send(formData);
+
+  const xhr2 = new XMLHttpRequest();
+  xhr2.open("POST", "phpmailer.php");
+  xhr2.onload = () => {
+    // handle response from page2.php
+  };
+  xhr2.send(formData);
+
+  const xhr3 = new XMLHttpRequest();
+  xhr3.open("POST", "databaseconnect.php");
+  xhr3.onload = () => {
+    // handle response from page3.php
+  };
+  xhr3.send(formData);
+  reloadPage();
+});
+
+// Range Rover Form
+
+RangeRover.addEventListener("submit", (event) => {
+  event.preventDefault();
+  myDialog.showModal();
+  const phoneRangeRoverField = document.getElementById("rangeroverphone");
+  const phoneRangeroverNumber = RangeRoverphoneInput.getNumber();
+  phoneRangeRoverField.value = phoneRangeroverNumber;
+
+  const formData = new FormData(RangeRover);
+
+  const xhr1 = new XMLHttpRequest();
+  xhr1.open("POST", "rangeroverwemail.php");
+  xhr1.onload = () => {
+    // handle response from page1.php
+  };
+  xhr1.send(formData);
+
+  const xhr2 = new XMLHttpRequest();
+  xhr2.open("POST", "phpmailer.php");
+  xhr2.onload = () => {
+    // handle response from page2.php
+  };
+  xhr2.send(formData);
+
+  const xhr3 = new XMLHttpRequest();
+  xhr3.open("POST", "databaseconnect.php");
+  xhr3.onload = () => {
+    // handle response from page3.php
+  };
+  xhr3.send(formData);
+  reloadPage();
+});
+
+// Jeep Rubicon Form
+
+JeepRubicon.addEventListener("submit", (event) => {
+  event.preventDefault();
+  myDialog.showModal();
+  const phoneJeepRubiconField = document.getElementById("jeeprubiconphone");
+  const phoneJeepRubiconNumber = JeepRubiconphoneInput.getNumber();
+  phoneJeepRubiconField.value = phoneJeepRubiconNumber;
+
+  const formData = new FormData(JeepRubicon);
+
+  const xhr1 = new XMLHttpRequest();
+  xhr1.open("POST", "jeeprubiconwemail.php");
+  xhr1.onload = () => {
+    // handle response from page1.php
+  };
+  xhr1.send(formData);
+
+  const xhr2 = new XMLHttpRequest();
+  xhr2.open("POST", "phpmailer.php");
+  xhr2.onload = () => {
+    // handle response from page2.php
+  };
+  xhr2.send(formData);
+
+  const xhr3 = new XMLHttpRequest();
+  xhr3.open("POST", "databaseconnect.php");
+  xhr3.onload = () => {
+    // handle response from page3.php
+  };
+  xhr3.send(formData);
+  reloadPage();
+});
+
+// Marcedes Benz Form
+
+Marcedes.addEventListener("submit", (event) => {
+  event.preventDefault();
+  myDialog.showModal();
+  const phoneMarcedesField = document.getElementById("marcedesphone");
+  const phoneMarcedesNumber = MarcedesphoneInput.getNumber();
+  phoneMarcedesField.value = phoneMarcedesNumber;
+
+  const formData = new FormData(Marcedes);
+
+  const xhr1 = new XMLHttpRequest();
+  xhr1.open("POST", "marcedeswemail.php");
+  xhr1.onload = () => {
+    // handle response from page1.php
+  };
+  xhr1.send(formData);
+
+  const xhr2 = new XMLHttpRequest();
+  xhr2.open("POST", "phpmailer.php");
+  xhr2.onload = () => {
+    // handle response from page2.php
+  };
+  xhr2.send(formData);
+
+  const xhr3 = new XMLHttpRequest();
+  xhr3.open("POST", "databaseconnect.php");
+  xhr3.onload = () => {
+    // handle response from page3.php
+  };
+  xhr3.send(formData);
+  reloadPage();
+});
+
+// Jeep Wrangler Form
+
+JeepWrangler.addEventListener("submit", (event) => {
+  event.preventDefault();
+  myDialog.showModal();
+  const phoneJeepWranglerField = document.getElementById("jeepwranglerphone");
+  const phoneJeepWranglerNumber = JeepWranglerphoneInput.getNumber();
+  phoneJeepWranglerField.value = phoneJeepWranglerNumber;
+
+  const formData = new FormData(JeepWrangler);
+
+  const xhr1 = new XMLHttpRequest();
+  xhr1.open("POST", "jeepwranglerwemail.php");
+  xhr1.onload = () => {
+    // handle response from page1.php
+  };
+  xhr1.send(formData);
+
+  const xhr2 = new XMLHttpRequest();
+  xhr2.open("POST", "phpmailer.php");
+  xhr2.onload = () => {
+    // handle response from page2.php
+  };
+  xhr2.send(formData);
+
+  const xhr3 = new XMLHttpRequest();
+  xhr3.open("POST", "databaseconnect.php");
+  xhr3.onload = () => {
+    // handle response from page3.php
+  };
+  xhr3.send(formData);
+  reloadPage();
+});
+
+//FIat Cabrio Form
+FIAT.addEventListener("submit", (event) => {
+  event.preventDefault();
+  myDialog.showModal();
+  const phoneFiatField = document.getElementById("fiatphone");
+  const phoneFiatNumber = FiatphoneInput.getNumber();
+  phoneFiatField.value = phoneFiatNumber;
+
+  const formData = new FormData(FIAT);
+
+  const xhr1 = new XMLHttpRequest();
+  xhr1.open("POST", "fiatwemail.php");
+  xhr1.onload = () => {
+    // handle response from page1.php
+  };
+  xhr1.send(formData);
+
+  const xhr2 = new XMLHttpRequest();
+  xhr2.open("POST", "phpmailer.php");
+  xhr2.onload = () => {
+    // handle response from page2.php
+  };
+  xhr2.send(formData);
+
+  const xhr3 = new XMLHttpRequest();
+  xhr3.open("POST", "databaseconnect.php");
+  xhr3.onload = () => {
+    // handle response from page3.php
+  };
+  xhr3.send(formData);
+  reloadPage();
+});
