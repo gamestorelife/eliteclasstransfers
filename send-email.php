@@ -40,6 +40,7 @@ try {
     //Recipients
     $mail->setFrom('no-reply@eliteclasstransfers.com', 'Elite Class Transfers');
     $mail->addAddress('rsveliteclasstransfers@gmail.com'); // Replace with your recipient email address
+    $mail->addAddress('reservations@eliteclasstransfers.com'); // Replace with your recipient email address
 
     // Content
     $mail->isHTML(true); // Set email format to HTML
