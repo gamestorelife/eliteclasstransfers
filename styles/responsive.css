@@ -1188,9 +1188,7 @@ width: 100%;
 		
 	}
 
-	.contact {
-		padding-bottom: 25px;
-	}
+
 
 
 
@@ -1486,7 +1484,7 @@ width: 100%;
 	}
 	.offers_content
 	{
-		margin-top: 40px;
+		margin-top: 15px;
 	}
 	.test_slider_nav
 	{
@@ -3841,10 +3839,7 @@ table {
 	{
 		font-size: 24px;
 	}
-	.test_item
-	{
-		padding-top: 26px;
-	}
+
 	.test_icon
 	{
 		left: 20px;

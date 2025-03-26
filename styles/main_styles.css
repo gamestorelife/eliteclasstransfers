@@ -90,7 +90,6 @@ ul {
 p {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
-  line-height: 2;
   font-weight: 400;
   color: #929191;
   -webkit-font-smoothing: antialiased;
@@ -1350,7 +1349,7 @@ select {
 
 .section_title {
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 500;
   color: #2d2c2c;
   margin-top: -8px;
   text-transform: uppercase;
@@ -1362,23 +1361,21 @@ select {
 
 .intro {
   width: 100%;
-  padding-top: 50px;
-  padding-bottom: 30px;
+  padding-top: 25px;
+  padding-bottom: 10px;
 }
 .intro_title {
-  font-weight: 700;
+  font-weight: 500;
   color: #2d2c2c;
   margin-top: -14px;
 }
-.intro_text {
-  margin-top: 21px;
-}
+
 .intro_text p {
   font-size: 24px;
   font-style: italic;
   color: #929191;
   line-height: 1.336;
-  margin-bottom: 40px;
+  margin-bottom: 5px;
 }
 .intro_items {
   margin-top: 10px;
@@ -1667,7 +1664,7 @@ select {
   margin-top: 10px;
 }
 .offers_col {
-  margin-bottom: 40px;
+  margin-bottom: 15px;
 }
 
 .offers_image_container {
@@ -1698,7 +1695,7 @@ select {
 .offer_name a {
   display: block;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   color: #ffffff;
   text-transform: uppercase;
   line-height: 35px;
@@ -1772,8 +1769,8 @@ select {
 
 .testimonials {
   width: 100%;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 18px;
+  padding-bottom: 15px;
   background: #ffffff;
 }
 .test_border {
@@ -1793,7 +1790,7 @@ select {
   width: 100%;
 }
 .test_item {
-  padding-top: 36px;
+  padding-top: 5px;
 }
 .test_icon {
   position: absolute;
@@ -1972,7 +1969,7 @@ select {
 
 .contact {
   width: 100%;
-  padding-bottom: 105px;
+  
 }
 .contact_background {
   position: absolute;
@@ -1986,7 +1983,7 @@ select {
 }
 .contact_title {
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 500;
   color: #ffffff;
   text-transform: uppercase;
 }
